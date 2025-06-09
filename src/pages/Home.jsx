@@ -55,7 +55,7 @@ function Home() {
        
        <h4 className='my-5 text-lg font-bold'>Event Calendar</h4>
        {/* Add Google event calendar here */}
-       <div className="p-4 bg-gray-200 rounded-xl">
+       <div className="p-4 bg-gray-200 rounded-xl dark:bg-gray-700">
         <p className='font-mono italic'>Coming Soon!</p>
        </div>
     </>

@@ -3,7 +3,7 @@ import { useState } from 'react'
 function SpecialEvent({ title, description, date, time, location }) {
   return (
     <div className='p-4 mt-3 bg-gray-200 shadow-sm rounded-xl hover:shadow-xl dark:bg-gray-700'> 
-        <h2 className='text-xl font-bold text-center dark:text-gray-400'>{title}</h2>
+        <h2 className='text-xl font-bold text-center dark:text-gray-200'>{title}</h2>
         <div className='grid grid-cols-3 gap-4 mt-2 font-mono italic text-center'>
           <p className="w-full">When: {date}</p>
           <p className="w-full">{time}</p>

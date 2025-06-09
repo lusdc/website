@@ -17,7 +17,7 @@ function Projects() {
     <>
         <h3 className='text-2xl font-bold'>Our Projects</h3>
 
-        <div className="p-4 mt-4 bg-gray-200 rounded-xl">
+        <div className="p-4 mt-4 bg-gray-200 rounded-xl dark:bg-gray-700">
           <p className='font-mono italic'>Project Announcements Coming Soon!</p>
         </div>
         

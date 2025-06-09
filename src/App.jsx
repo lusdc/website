@@ -21,7 +21,7 @@ function App() {
             <Link to="/" onClick={() => setActiveLink('/')}>
               <div className='flex items-center text-white'>
                 <img className="inline-flex w-20" src={clubLogo} alt="Software Development Club Logo" />
-                <h1 className="inline-flex mx-3 text-3xl font-bold">SDC</h1>
+                <h1 className="hidden mx-3 text-3xl font-bold sm:inline-flex">SDC</h1>
               </div>
             </Link>
             <nav className="flex px-4 space-x-10 text-white bg-custom-black md:px-10">

@@ -41,7 +41,7 @@ function About() {
 
         <h3 className='mt-5 text-xl font-bold'>Our Team</h3>
         
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-4'>
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
           <TeamMember
             name="Jeffrey Vandever"
             title="President"
@@ -53,9 +53,10 @@ function About() {
           <TeamMember
             name="TBD"
             title="Vice President"
-            image="https://via.placeholder.com/150"
+            image=""
           />
-          
+        </div>
+        <div className='grid grid-cols-1 gap-4 mt-4 sm:grid-cols-3'>
           <TeamMember
             name="Ron Popov"
             title="Treasurer"
