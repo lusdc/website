@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useState } from 'react'
 import clubLogo from './assets/logo.svg'
+import confusedCrab from './assets/404Crab.png'
 import './App.css'
 
 // Importing the pages
@@ -10,7 +11,7 @@ import About from './pages/About'
 import Events from './pages/Events'
 
 function App() {
-  const [activeLink, setActiveLink] = useState('/');
+  const [activeLink, setActiveLink] = useState(window.location.pathname);
 
   return (
     <Router>
@@ -64,6 +65,15 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<Events />} />
+            <Route path="*" element=
+              {
+                <div>
+                  <img className='mx-auto w-96 h-96' src={confusedCrab} alt="Confused Crab" />
+                  <h2 className='text-5xl font-extrabold text-center'>404</h2>
+                  <h2 className='mt-2 text-3xl font-bold text-center'>Page Not Found</h2>
+                </div>
+              } 
+            />
           </Routes>
         </div>
 

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import confusedCrab from '../assets/404Crab.png'
 
 function TeamMember({name, title, image, github, linkedin}) {
   return (
@@ -53,7 +54,7 @@ function About() {
           <TeamMember
             name="TBD"
             title="Vice President"
-            image=""
+            image={confusedCrab}
           />
         </div>
         <div className='grid grid-cols-1 gap-4 mt-4 sm:grid-cols-3'>

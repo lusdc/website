@@ -21,9 +21,17 @@ function Events() {
         <SpecialEvent
             title="Weekly Meetings"
             description="Join us for our weekly meetings where we discuss club activities, projects, and more!"
-            date="Every Tuesday"
-            time="TBD"
+            date="Every Monday"
+            time="6 PM - 7:30 PM"
             location="SoBusi 2810"
+        />
+
+        <SpecialEvent
+            title="Special Event: To Be Announced"
+            description="Join us for a special competitive event to be announced soon! Stay tuned for details."
+            date="Saturday, Sept. 13th"
+            time="9 AM - 9 PM"
+            location="School of Business"
         />
 
     </>
