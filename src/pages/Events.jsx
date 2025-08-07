@@ -18,6 +18,7 @@ function Events() {
   return (
     <>
         <h3 className='text-2xl font-bold'>Our Events</h3>
+        
         <SpecialEvent
             title="Weekly Meetings"
             description="Join us for our weekly meetings where we discuss club activities, projects, and more!"
@@ -27,13 +28,20 @@ function Events() {
         />
 
         <SpecialEvent
-            title="Special Event: To Be Announced"
-            description="Join us for a special competitive event to be announced soon! Stay tuned for details."
+            title="12 Hour Hackathon"
+            description="Join us for our first 12-hour hackathon ever judged by industry professionals! This is a great opportunity to work on a team to build a project, learn new skills, and network with others."
             date="Saturday, Sept. 13th"
             time="9 AM - 9 PM"
             location="School of Business"
         />
 
+        <SpecialEvent
+            title="Chat, are we cooked? (AI Discussion)"
+            description="Join us for a special event where we will be discussing the future of AI and its impact on software development. This event will feature many guest speakers from the industry."
+            date="Monday, Nov. 3rd"
+            time="6 PM - 7:30 PM"
+            location="SoBusi 2810"
+        />
     </>
   )
 }
