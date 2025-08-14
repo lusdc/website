@@ -44,3 +44,140 @@ body {
 .read-the-docs {
   color: #888;
 } */
+
+@property --rotating-border-color {
+  syntax: "<color>";
+  initial-value: 0;
+  inherits: true;
+}
+
+@property --rotating-border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.rotating-border-wrapper {
+  border-radius: 0.75rem;
+  
+  background-image: conic-gradient(
+    from var(--rotating-border-angle, 0deg),
+    transparent 25%,
+    var(--rotating-border-color) 90%,
+    transparent 95%
+  );
+    
+  animation: spin 2s linear infinite;
+  
+  /* Start hidden until hover */
+  padding: 0px; /* thickness of the border */
+  transition: transform 0.1s ease, padding 0.3s ease;
+}
+
+.rotating-border-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1; /* behind content */
+  pointer-events: none;
+
+  border-radius: 0.75rem;
+
+  /* Glow */
+  background: var(--rotating-border-color);
+  filter: blur(10px);
+
+  /* Start hidden until hover */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rotating-border-wrapper:hover::after {
+  opacity: 0.3;
+}
+
+.rotating-border-wrapper:hover {
+  transform: scale(1.05);
+  padding: 1.5px;
+}
+
+.rotating-border-card {
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+@keyframes spin {
+  to {
+    --rotating-border-angle: 360deg;
+  }
+}
+
+.rotating-border-card-icon {
+  position: absolute;
+  width: 6rem;
+  z-index: 100;
+  
+  top: 0;
+  right: 0;
+  
+  transform: translate(35%, -35%);
+  opacity: 0;
+
+  transition: opacity 0.01s linear, transform 0.01s linear;
+  pointer-events: none; /* prevents blocking hover on card */
+}
+
+.rotating-border-card:hover .rotating-border-card-icon {
+  opacity: 1;
+  animation: bounce-out 0.6s ease;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1
+  }
+}
+
+/* Bounce from inner to outer */
+@keyframes bounce-out {
+  0% {
+    transform: translate(5%, -5%) scale(0.9);
+  }
+  50% {
+    transform: translate(45%, -45%) scale(1.05);
+  }
+  70% {
+    transform: translate(32%, -32%) scale(1);
+  }
+  100% {
+    transform: translate(35%, -35%) scale(1);
+  }
+}
+
+@keyframes glitch {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  20% { clip-path: inset(10% 0 85% 0); transform: translate(-3px, -1px); }
+  40% { clip-path: inset(85% 0 10% 0); transform: translate(3px, 1px); }
+  60% { clip-path: inset(10% 0 85% 0); transform: translate(-3px, 1px); }
+  80% { clip-path: inset(85% 0 10% 0); transform: translate(3px, -1px); }
+}
+.glitch-effect {
+  position: relative;
+}
+.glitch-effect::before,
+.glitch-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  mix-blend-mode: screen;
+  animation: glitch 2s infinite;
+}
+.glitch-effect::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+}
+.glitch-effect::after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+}
