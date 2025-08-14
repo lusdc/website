@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import groupPicture from '../assets/groupPicture.jpg'
+import groupPicture from "../assets/groupPicture.jpg";
 
-import jeffrey from '../assets/jeffrey.jpeg'
-import ron from '../assets/ron.jpeg'
-import loc from '../assets/loc.jpeg'
-import gabe from '../assets/gabe.jpeg'
-import confusedCrab from '../assets/404Crab.png'
+import jeffrey from "../assets/jeffrey.jpeg";
+import ron from "../assets/ron.jpeg";
+import loc from "../assets/loc.jpeg";
+import gabe from "../assets/gabe.jpeg";
+import confusedCrab from "../assets/404Crab.png";
 
 function TeamMember({ name, title, image, github, linkedin }) {
   return (
-    <div className="flex flex-col items-center p-4 mt-3 text-center bg-gray-200 shadow-sm rounded-xl hover:shadow-xl dark:bg-gray-700">
+    <div className="flex flex-col items-center p-4 mt-3 max-w-7xl text-center bg-gray-200 shadow-sm rounded-xl hover:shadow-xl dark:bg-gray-700">
       <img
         src={image}
         alt={name + " photo"}
@@ -64,77 +63,81 @@ function TeamMember({ name, title, image, github, linkedin }) {
 function About() {
   return (
     <>
-      <div className="my-[4rem]">
-        <div className="grid items-center justify-between w-full space-x-8">
-          <div className="grid-cols-4">
-            <h3 className="text-2xl font-bold my-2">Who We Are</h3>
-            <p className="text-gray-700 dark:text-gray-400">
-              The Software Development Club is a group of students and faculty
-              at Liberty University who are passionate about software
-              development. We meet weekly to learn new technologies, work on
-              projects, and network with industry professionals.
-            </p>
-          </div>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-8 lg:gap-12 lg:mb-[4rem] justify-start items-center">
+        {/* First content block */}
+        <div className="order-1 sm:order-1 col-span-1 pr-4">
+          <h3 className="text-2xl font-bold my-2">Who We Are</h3>
+          <p className="text-gray-700 dark:text-gray-400">
+            The Software Development Club is a group of students and faculty at
+            Liberty University who are passionate about software development. We
+            meet weekly to learn new technologies, work on projects, and network
+            with industry professionals.
+          </p>
+        </div>
+        <div className="order-2 sm:order-2 col-span-1 w-auto h-52 rounded-xl lg:h-60 2xl:h-96 hover:shadow-xl overflow-hidden">
           <img
-            className="grid-cols-4 w-auto mx-30 h-52 rounded-xl lg:h-60 2xl:h-96 hover:shadow-xl"
+            className="w-full h-full object-cover"
             src={groupPicture}
-            alt="Software Development Club Group Picture"
+            alt="Placeholder Picture"
           />
         </div>
 
-        <div className="mt-12 grid items-center justify-between w-full space-x-8">
-          <div className="grid-cols-4">
-            <h3 className="text-2xl font-bold my-2">Our Mission</h3>
-            <p className="text-gray-700 dark:text-gray-400">
-              The Software Development Club is a space for Software Engineers
-              and others to learn, collaborate, and deploy meaningful software
-              projects in an industry-like environment.
-            </p>
-          </div>
+        {/* Second content block */}
+        <div className="order-3 sm:order-4 col-span-1">
+          <h3 className="text-2xl font-bold my-2">Our Mission</h3>
+          <p className="text-gray-700 dark:text-gray-400">
+            The Software Development Club is a space for Software Engineers and
+            others to learn, collaborate, and deploy meaningful software
+            projects in an industry-like environment.
+          </p>
+        </div>
+        <div className="order-4 sm:order-3 col-span-1 w-auto h-52 rounded-xl lg:h-60 2xl:h-96 hover:shadow-xl overflow-hidden">
           <img
-            className="grid-cols-4 w-auto mx-30 h-52 rounded-xl lg:h-60 2xl:h-96 hover:shadow-xl"
+            className="w-full h-full object-cover"
             src={groupPicture}
-            alt="Software Development Club Group Picture"
+            alt="Placeholder Picture"
           />
         </div>
+      </div>
 
-        <h3 className="mt-5 text-xl font-bold">Our Team</h3>
+      <div className="text-center mt-16 mb-8">
+        <h3 className="text-2xl font-bold">Meet The Team</h3>
+      </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <TeamMember
-            name="Jeffrey Vandever"
-            title="President"
-            image={jeffrey}
-            linkedin="https://www.linkedin.com/in/jeffrey-vandever/"
-            github="https://github.com/jeffreyv101"
-          />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <TeamMember
+          name="Jeffrey Vandever"
+          title="President"
+          image={jeffrey}
+          linkedin="https://www.linkedin.com/in/jeffrey-vandever/"
+          github="https://github.com/jeffreyv101"
+        />
 
-          <TeamMember name="TBD" title="Vice President" image={confusedCrab} />
-        </div>
-        <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-3">
-          <TeamMember
-            name="Ron Popov"
-            title="Treasurer"
-            image={ron}
-            linkedin="https://www.linkedin.com/in/ron-popov-59ba47201/"
-          />
+        <TeamMember name="TBD" title="Vice President" image={confusedCrab} />
+      </div>
+      <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-3">
+        <TeamMember
+          name="Ron Popov"
+          title="Treasurer"
+          image={ron}
+          linkedin="https://www.linkedin.com/in/ron-popov-59ba47201/"
+        />
 
-          <TeamMember
-            name="Loc Nguyen"
-            title="Director of Marketing"
-            image={loc}
-            linkedin="https://www.linkedin.com/in/lock-nguyen/"
-            github="https://github.com/LockNguyen"
-          />
+        <TeamMember
+          name="Loc Nguyen"
+          title="Director of Marketing"
+          image={loc}
+          linkedin="https://www.linkedin.com/in/lock-nguyen/"
+          github="https://github.com/LockNguyen"
+        />
 
-          <TeamMember
-            name="Gabe Eaton"
-            title="Director of Club Projects"
-            image={gabe}
-            linkedin="https://www.linkedin.com/in/gabeeaton/"
-            github="https://github.com/gabeeaton"
-          />
-        </div>
+        <TeamMember
+          name="Gabe Eaton"
+          title="Director of Club Projects"
+          image={gabe}
+          linkedin="https://www.linkedin.com/in/gabeeaton/"
+          github="https://github.com/gabeeaton"
+        />
       </div>
     </>
   );
