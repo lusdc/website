@@ -1,6 +1,11 @@
-import { useState } from "react";
-import groupPicture from "../assets/groupPicture.jpg";
-import confusedCrab from "../assets/404Crab.png";
+import { useState } from 'react'
+import groupPicture from '../assets/groupPicture.jpg'
+
+import jeffrey from '../assets/jeffrey.jpeg'
+import ron from '../assets/ron.jpeg'
+import loc from '../assets/loc.jpeg'
+import gabe from '../assets/gabe.jpeg'
+import confusedCrab from '../assets/404Crab.png'
 
 function TeamMember({ name, title, image, github, linkedin }) {
   return (
@@ -99,7 +104,7 @@ function About() {
           <TeamMember
             name="Jeffrey Vandever"
             title="President"
-            image="https://media.licdn.com/dms/image/v2/D4D03AQHj_D41DN_w8Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1676500799420?e=1753315200&v=beta&t=Du9_IrlPH8IMgMyCW4Xxpw6u0T6rfCz4hZgbYn8tjSU"
+            image={jeffrey}
             linkedin="https://www.linkedin.com/in/jeffrey-vandever/"
             github="https://github.com/jeffreyv101"
           />
@@ -110,14 +115,14 @@ function About() {
           <TeamMember
             name="Ron Popov"
             title="Treasurer"
-            image="https://media.licdn.com/dms/image/v2/D4D03AQE2srYeK8IQOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715184730787?e=1753315200&v=beta&t=jZ_pOktbCKM4G5dOYXmy1UjAIZNJe9-4Te_RqZWPLmI"
+            image={ron}
             linkedin="https://www.linkedin.com/in/ron-popov-59ba47201/"
           />
 
           <TeamMember
             name="Loc Nguyen"
             title="Director of Marketing"
-            image="https://media.licdn.com/dms/image/v2/D4E03AQEorPlp5RjD1Q/profile-displayphoto-shrink_400_400/B4EZSpA2DEGYAg-/0/1738002358761?e=1753315200&v=beta&t=xJ9p3psy9ykbKlGDjsR_Xu-jTTFclwE9P0PUBCy1KFE"
+            image={loc}
             linkedin="https://www.linkedin.com/in/lock-nguyen/"
             github="https://github.com/LockNguyen"
           />
@@ -125,7 +130,7 @@ function About() {
           <TeamMember
             name="Gabe Eaton"
             title="Director of Club Projects"
-            image="https://media.licdn.com/dms/image/v2/D5603AQGmCQiUkKxN8g/profile-displayphoto-shrink_800_800/B56ZTogfllHsAc-/0/1739067620691?e=1753315200&v=beta&t=FBpvzDbzm4OhkGgiJk-BjjNP511sKp2bh5-N-KEwhBE"
+            image={gabe}
             linkedin="https://www.linkedin.com/in/gabeeaton/"
             github="https://github.com/gabeeaton"
           />
