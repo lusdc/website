@@ -16,8 +16,8 @@ function App() {
   return (
     <Router>
       <div className="bg-gray-100 dark:bg-gray-800">
-        <header className="w-full bg-custom-black justify-center">
-          <div className="flex max-w-[90rem] mx-auto md:justify-between items-center">
+        <header className="justify-center w-full bg-custom-black">
+          <div className="flex max-w-[90rem] mx-auto px-6 md:px-10 lg:px-16 md:justify-between items-center">
             <Link to="/" onClick={() => setActiveLink("/")}>
               <div className="flex items-center text-white">
                 <img
