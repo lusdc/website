@@ -1,0 +1,26 @@
+export const projects = [
+    {
+        'status': 'active',
+        'imageUrl': '/src/assets/events/weeklyMeetings.png',
+        'title': 'Discipler',
+        'description': 'Building a SAAS platform that uses AI for adaptive spiritual growth.',
+        'hashtags': ["AI/ML", "FrontEnd", "BackEnd", "FullStack", "WebDev"],
+        'startTime': '2025-08-25T18:00:00-04:00',
+        'endTime': '2025-08-25T19:30:00-04:00',
+        'location': 'SoBusi 2810',
+        'projectLeaders': ['Loc Nguyen', 'Jeffrey Vandever'],
+        'projectMembers': ['Caleb Hellmund', 'Will Cook'],
+    },
+    {
+        'status': 'active',
+        'imageUrl': '/src/assets/events/weeklyMeetings.png',
+        'title': 'Missionize',
+        'description': 'Building a SAAS platform that uses AI for adaptive spiritual growth.',
+        'hashtags': ["AI/ML"],
+        'startTime': '2025-08-25T18:00:00-04:00',
+        'endTime': '2025-08-25T19:30:00-04:00',
+        'location': 'SoBusi 2810',
+        'projectLeaders': ['Loc Nguyen', 'Jeffrey Vandever'],
+        'projectMembers': ['Caleb Hellmund', 'Will Cook'],
+    },
+];
