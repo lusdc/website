@@ -1,4 +1,5 @@
-import groupPicture from "../assets/groupPicture.jpg";
+import collaborationGif from "../assets/collaboration.gif";
+import flyingRocketGif from "../assets/flyingRocket.gif";
 
 import jeffrey from "../assets/jeffrey.jpeg";
 import ron from "../assets/ron.jpeg";
@@ -63,48 +64,58 @@ function TeamMember({ name, title, image, github, linkedin }) {
 function About() {
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-8 lg:gap-12 lg:mb-[4rem] justify-start items-center">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-y-20 lg:gap-12 justify-start items-center">
+
         {/* First content block */}
         <div className="order-1 sm:order-1 col-span-1 pr-4">
-          <h3 className="text-2xl font-bold my-2">Who We Are</h3>
-          <p className="text-gray-700 dark:text-gray-400">
-            The Software Development Club is a group of students and faculty at
-            Liberty University who are passionate about software development. We
-            meet weekly to learn new technologies, work on projects, and network
+          <div className="whitespace-nowrap">
+            <h3 className="text-6xl font-bold text-gray-700 -ml-4">Who We Are</h3>
+          </div>
+          <h3 className="text-3xl font-bold -mt-6">Who We Are</h3>
+          <p className="mt-4 text-lg text-gray-700 dark:text-gray-400">
+            A community of students and faculty at Liberty University passionate about Software! 
+            We meet weekly to learn new technologies, collaborate on projects, and network
             with industry professionals.
           </p>
         </div>
-        <div className="order-2 sm:order-2 col-span-1 w-auto h-52 rounded-xl lg:h-60 2xl:h-96 hover:shadow-xl overflow-hidden">
+        <div className="order-2 sm:order-2 col-span-1 flex justify-center">
           <img
-            className="w-full h-full object-cover"
-            src={groupPicture}
+            className="h-64"
+            src={collaborationGif}
             alt="Placeholder Picture"
           />
         </div>
 
         {/* Second content block */}
-        <div className="order-3 sm:order-4 col-span-1">
-          <h3 className="text-2xl font-bold my-2">Our Mission</h3>
-          <p className="text-gray-700 dark:text-gray-400">
-            The Software Development Club is a space for Software Engineers and
-            others to learn, collaborate, and deploy meaningful software
-            projects in an industry-like environment.
+        <div className="order-3 sm:order-4 col-span-1 mt-20 sm:mt-0">
+          <div className="whitespace-nowrap">
+            <h3 className="text-6xl font-bold text-gray-700 -ml-4">Our Mission</h3>
+          </div>
+          <h3 className="text-3xl font-bold -mt-6">Our Mission</h3>
+          <p className="mt-4 text-lg text-gray-700 dark:text-gray-400">
+            To provide a welcoming space for adventurous Software Engineers, Entrepreneurs, 
+            Project Managers, and many others to learn, collaborate, and deploy high-impact 
+            software projects in an industry-like environment.
           </p>
         </div>
-        <div className="order-4 sm:order-3 col-span-1 w-auto h-52 rounded-xl lg:h-60 2xl:h-96 hover:shadow-xl overflow-hidden">
+        <div className="order-4 sm:order-3 col-span-1 flex justify-center">
           <img
-            className="w-full h-full object-cover"
-            src={groupPicture}
+            className="h-64"
+            src={flyingRocketGif}
             alt="Placeholder Picture"
           />
         </div>
+
       </div>
 
-      <div className="text-center mt-16 mb-8">
-        <h3 className="text-2xl font-bold">Meet The Team</h3>
+      <div className="sm:text-center mt-20">
+        <div className="whitespace-nowrap">
+          <h3 className="text-6xl font-bold text-gray-700 -ml-4 sm:ml-0">Our Leadership</h3>
+        </div>
+        <h3 className="text-3xl font-bold -mt-6">Our Leadership</h3>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <TeamMember
           name="Jeffrey Vandever"
           title="President"
@@ -115,6 +126,7 @@ function About() {
 
         <TeamMember name="TBD" title="Vice President" image={confusedCrab} />
       </div>
+
       <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-3">
         <TeamMember
           name="Ron Popov"

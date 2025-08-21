@@ -1,5 +1,5 @@
 import groupPicture from '../assets/groupPicture.jpg'
-import greenUpArrowIcon from '../assets/greenUpArrow.png'
+import redUpArrowIcon from '../assets/redUpArrow.png'
 import rocketIcon from '../assets/rocket.png'
 import communityIcon from '../assets/community.jpg'
 import CardWithGraphic from '../components/CardWithGraphic'
@@ -11,7 +11,7 @@ function Home({ setActiveLinkCallback }) {
         <div className=''>
           <h2 className='text-3xl font-bold text-custom-light-orange xl:text-4xl dark:text-custom-light-orange'>Software Development Club</h2>
           <h3 className='text-2xl font-thin text-gray-700 dark:text-gray-400 xl:text-3xl'>at Liberty University</h3>
-          <div className='flex mt-5 space-x-4'>
+          <div className='flex mt-6 space-x-4'>
             {/* Icons cortesy of https://icons.getbootstrap.com/ */}
 
             {/* LinkedIn Logo */}
@@ -31,12 +31,12 @@ function Home({ setActiveLinkCallback }) {
         <img className="hidden w-auto mx-30 h-52 rounded-xl md:inline-flex lg:h-60 2xl:h-96 hover:shadow-xl" src={groupPicture} alt="Software Development Club Group Picture" />
        </div>
 
-       <div className='mb-[4rem] items-stretch md:justify-between md:flex md:space-x-3 space-y-3 md:space-y-0'>
+       <div className='items-stretch md:justify-between md:flex md:space-x-6 space-y-3 md:space-y-0'>
         <CardWithGraphic
           title="Peer‑Led Workshops"
           description="Weekly sessions dive into languages, frameworks, and best practices—taught by members, for members—so everyone levels up together."
-          imgUrl={greenUpArrowIcon}
-          glowColor="rgb(22, 231, 22)"
+          imgUrl={redUpArrowIcon}
+          glowColor="rgb(255, 92, 27)"
           linkTo="/events"
           setActiveLinkCallback={setActiveLinkCallback}
         />
@@ -52,7 +52,7 @@ function Home({ setActiveLinkCallback }) {
           title="Career-Ready Community"
           description="Hackathons, mentorship, and networking events connect you with alumni and recruiters, turning club experience into standout internships and jobs."
           imgUrl={communityIcon}
-          glowColor="rgb(182, 27, 254)"
+          glowColor="rgb(31, 173, 255)"
           linkTo="/"
           setActiveLinkCallback={setActiveLinkCallback}
         />

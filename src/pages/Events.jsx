@@ -1,4 +1,4 @@
-import { events } from "../assets/Events";
+import { events } from "../assets/Events"; // Events are soft-coded here
 
 function EventCard({ imageUrl, title, description, startTime, endTime, location }) {
   const eventStart = new Date(startTime);
@@ -21,7 +21,7 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location 
   });
 
   return (
-    <div className="h-auto bg-gray-200 shadow-sm rounded-xl overflow-hidden hover:shadow-xl dark:bg-gray-700">
+    <div className="h-auto w-72 bg-gray-200 shadow-sm rounded-xl overflow-hidden hover:shadow-xl dark:bg-gray-700">
       <div className="relative w-full h-48">
         <img
           src={imageUrl}
@@ -31,7 +31,7 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location 
         <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-gray-200 dark:from-gray-700 to-transparent"></div>
       </div>
       <div className="relative px-4 pb-4 -mt-8 z-20">
-        <h2 className=" text-2xl font-bold dark:text-gray-200">{title}</h2>
+        <h2 className="text-2xl font-bold dark:text-gray-200">{title}</h2>
         <p className="mt-4">{description}</p>
         <p className="mt-4">📅 {day}, {month}. {date}</p>
         <p className="">🕑 {_startTime} - {_endTime}</p>
@@ -44,12 +44,15 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location 
 function Events() {
   return (
     <>
-      <div className="w-full flex justify-center">
-        <div className="flex flex-col space-y-6 max-w-80 justify-center">
-          <div className="text-center mb-4">
-            <h3 className="text-2xl font-bold">Upcoming Events</h3>
+      <div className="w-full">
+        <div className="sm:text-center">
+          <div className="whitespace-nowrap">
+            <h1 className="text-6xl font-bold text-gray-700 -ml-4 sm:ml-0">Upcoming Events</h1>
           </div>
+          <h1 className="text-3xl font-bold -mt-6">Upcoming Events</h1>
+        </div>
 
+        <div className="mt-16 flex flex-row flex-wrap gap-6 sm:gap-8 justify-center">
           {events
             .sort((event) => Date(event.startTime))
             .map((event) => (

@@ -1,28 +1,81 @@
-import { useState } from 'react'
+import { projects } from "../assets/Projects"; // Events are soft-coded here
 
-function Project({title, description, link, leader, members}) {
+function ProjectCard({ imageUrl, title, description, hashtags, startTime, endTime, location, projectLeaders, projectMembers }) {
+  const eventStart = new Date(startTime);
+  const eventEnd = new Date(endTime);
+
+  const month = eventStart.toLocaleString("en-US", {
+    month: "short",
+  });
+  const date = eventStart.getDate(); // Day of the month (1-31)
+  const day = eventStart.toLocaleDateString('en-US', { weekday: 'long' }); // Day of the week (Monday-Sunday)
+  const _startTime = eventStart.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+  const _endTime = eventEnd.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+
   return (
-    <div className='p-4 mt-3 bg-gray-200 shadow-sm rounded-xl hover:shadow-xl dark:bg-gray-700'> 
-        <h2 className='text-lg font-bold dark:text-gray-100'>{title}</h2>
-        <p className='text-gray-700 dark:text-gray-400'>{description}</p>
-        {link ? <p className='text-gray-700 dark:text-gray-400'>Project Link: {link}</p> : <p className='text-gray-700 dark:text-gray-400'>Project Link: Not available</p>}
-        <p className='text-gray-700 dark:text-gray-400'>Project Leader: {leader}</p>
-        <p className='text-gray-700 dark:text-gray-400'>Project Members: {members.join(', ')}</p>
+    <div className="h-auto w-72 bg-gray-200 shadow-sm rounded-xl overflow-hidden hover:shadow-xl dark:bg-gray-700">
+      <div className="relative w-full h-48">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full h-full object-cover"
+        ></img>
+        <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-gray-200 dark:from-gray-700 to-transparent"></div>
+      </div>
+      <div className="relative px-4 pb-4 -mt-8 z-20">
+        <h2 className="text-2xl font-bold dark:text-gray-200">{title}</h2>
+        <p className="mt-4">{description}</p>
+        <p className="mt-4 flex flex-wrap gap-x-1">{hashtags.map((hashtag) => <p className="font-bold text-sky-500">#{hashtag}</p>)}</p>
+        <p className="mt-4">📅 {day}, {month}. {date}</p>
+        <p className="">🕑 {_startTime} - {_endTime}</p>
+        <p className="">📍 {location}</p>
+        <p className="mt-4">{projectLeaders.join(", ")}</p> {/* Will be upgraded to people cards*/}
+        <p className="">{projectMembers.join(", ")}</p>
+      </div>
     </div>
-  )
+  );
 }
 
 function Projects() {
   return (
     <>
-        <h3 className='text-2xl font-bold'>Our Projects</h3>
-
-        <div className="p-4 mt-4 bg-gray-200 rounded-xl dark:bg-gray-700">
-          <p className='font-mono italic'>Project Announcements Coming Soon!</p>
+      <div className="w-full">
+        <div className="sm:text-center">
+          <div className="whitespace-nowrap">
+            <h1 className="text-6xl font-bold text-gray-700 -ml-4 sm:ml-0">Projects</h1>
+          </div>
+          <h1 className="text-3xl font-bold -mt-6">Projects</h1>
         </div>
-        
+
+        <div className="mt-16 flex flex-row flex-wrap gap-6 sm:gap-8 justify-center">
+          {projects
+            .sort((project) => Date(project.startTime))
+            .map((project) => (
+              <ProjectCard
+                key={project.title}
+                imageUrl={project.imageUrl}
+                title={project.title}
+                description={project.description}
+                hashtags={project.hashtags}
+                startTime={project.startTime}
+                endTime={project.endTime}
+                location={project.location}
+                projectLeaders={project.projectLeaders}
+                projectMembers={project.projectMembers}
+              />
+            ))}
+        </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default Projects
+export default Projects;
