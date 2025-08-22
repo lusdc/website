@@ -71,7 +71,6 @@ body {
   
   /* Start hidden until hover */
   padding: 0px; /* thickness of the border */
-  transition: transform 0.1s ease, padding 0.3s ease;
 }
 
 .rotating-border-wrapper::after {
@@ -97,7 +96,7 @@ body {
 }
 
 .rotating-border-wrapper:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   padding: 1.5px;
 }
 
@@ -180,4 +179,110 @@ body {
 .glitch-effect::after {
   left: -2px;
   text-shadow: -2px 0 blue;
+}
+
+
+.button {
+  --bezier: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --edge-light: hsla(0, 0%, 50%, 0.8);
+  --text-light: rgba(255, 255, 255, 0.4);
+  --back-color: 14, 80%;
+
+  cursor: pointer;
+  padding: 0.7em 1em;
+  border-radius: 0.5em;
+  min-height: 2.4em;
+  min-width: 3em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-weight: bold;
+
+  background: linear-gradient(
+    140deg,
+    hsla(var(--back-color), 50%, 1) min(2em, 20%),
+    hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+  );
+  color: hsla(0, 0%, 90%);
+  border: 0;
+  box-shadow: inset 0.4px 1px 4px var(--edge-light);
+
+  transition: all 0.1s var(--bezier);
+}
+
+.button:hover {
+  box-shadow: inset 0.4px 1px 4px var(--edge-light),
+    2px 4px 8px hsla(0, 0%, 0%, 0.295);
+}
+
+.button:active {
+  --text-light: rgba(255, 255, 255, 1);
+
+  background: linear-gradient(
+    140deg,
+    hsla(var(--back-color), 50%, 1) min(2em, 20%),
+    hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+  );
+  box-shadow: inset 0.4px 1px 8px var(--edge-light),
+    0px 0px 8px hsla(var(--back-color), 50%, 0.6);
+  text-shadow: 0px 0px 20px var(--text-light);
+  color: hsla(0, 0%, 100%, 1);
+  letter-spacing: 0.05em;
+}
+
+
+
+/* Container to hold the icon + shadow */
+.levitate {
+  display: inline-block;
+}
+
+/* The icon itself */
+.levitate .icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.levitate .animate-delay-250 { animation-delay: 0.25s; }
+.levitate .animate-delay-500 { animation-delay: 0.5s; }
+.levitate .animate-delay-750 { animation-delay: 0.75s; }
+.levitate .animate-delay-1000 { animation-delay: 1s; }
+
+/* The shadow */
+.levitate::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 12px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, transparent 80%);
+  border-radius: 50%;
+  animation: shadowPulse 3s ease-in-out infinite;
+}
+
+/* Floating motion */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Shadow change (wider + lighter when higher, tighter + darker when closer) */
+@keyframes shadowPulse {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(1) scaleY(0.7);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1.3) scaleY(0.5);
+    opacity: 0.2;
+  }
 }

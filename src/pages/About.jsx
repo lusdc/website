@@ -1,5 +1,7 @@
-import collaborationGif from "../assets/collaboration.gif";
-import flyingRocketGif from "../assets/flyingRocket.gif";
+import laptopIcon from "../assets/laptop.png";
+import phoneIcon from "../assets/phone.png";
+import redRocketIcon from "../assets/redRocket.png";
+import lightbulbIcon from "../assets/lightbulb.png";
 
 import jeffrey from "../assets/jeffrey.jpeg";
 import ron from "../assets/ron.jpeg";
@@ -7,9 +9,18 @@ import loc from "../assets/loc.jpeg";
 import gabe from "../assets/gabe.jpeg";
 import confusedCrab from "../assets/404Crab.png";
 
-function TeamMember({ name, title, image, github, linkedin }) {
+import blob0 from "/src/assets/blobs/blob-haikei.png";
+import blob1 from "/src/assets/blobs/blob-haikei (1).png";
+import blob2 from "/src/assets/blobs/blob-haikei (2).png";
+import blob3 from "/src/assets/blobs/blob-haikei (3).png";
+import blob4 from "/src/assets/blobs/blob-haikei (4).png";
+import blob5 from "/src/assets/blobs/blob-haikei (5).png";
+import blob6 from "/src/assets/blobs/blob-haikei (6).png";
+import blob7 from "/src/assets/blobs/blob-haikei (7).png";
+
+function TeamMemberCard({ name, title, image, github, linkedin }) {
   return (
-    <div className="flex flex-col items-center p-4 mt-3 max-w-7xl text-center bg-gray-200 shadow-sm rounded-xl hover:shadow-xl dark:bg-gray-700">
+    <div className="flex flex-col items-center p-4 mt-3 max-w-7xl text-center bg-gray-200 shadow-lg rounded-xl hover:shadow-xl dark:bg-gray-700">
       <img
         src={image}
         alt={name + " photo"}
@@ -64,59 +75,80 @@ function TeamMember({ name, title, image, github, linkedin }) {
 function About() {
   return (
     <>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-y-20 lg:gap-12 justify-start items-center">
+      {/* Blobs container */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Blob 1 */}
+        <img className="absolute -left-10 top-[0rem] rotate-[30deg] h-[25rem] blur-3xl opacity-20" src={blob0}></img>
 
-        {/* First content block */}
-        <div className="order-1 sm:order-1 col-span-1 pr-4">
-          <div className="whitespace-nowrap">
-            <h3 className="text-6xl font-bold text-gray-700 -ml-4">Who We Are</h3>
-          </div>
-          <h3 className="text-3xl font-bold -mt-6">Who We Are</h3>
-          <p className="mt-4 text-lg text-gray-700 dark:text-gray-400">
-            A community of students and faculty at Liberty University passionate about Software! 
-            We meet weekly to learn new technologies, collaborate on projects, and network
-            with industry professionals.
-          </p>
-        </div>
-        <div className="order-2 sm:order-2 col-span-1 flex justify-center">
-          <img
-            className="h-64"
-            src={collaborationGif}
-            alt="Placeholder Picture"
-          />
-        </div>
+        {/* Blob 2 */}
+        <img className="absolute right-0 top-[25rem] -rotate-[30deg] h-[15rem] blur-3xl opacity-30" src={blob1}></img>
 
-        {/* Second content block */}
-        <div className="order-3 sm:order-4 col-span-1 mt-20 sm:mt-0">
-          <div className="whitespace-nowrap">
-            <h3 className="text-6xl font-bold text-gray-700 -ml-4">Our Mission</h3>
-          </div>
-          <h3 className="text-3xl font-bold -mt-6">Our Mission</h3>
-          <p className="mt-4 text-lg text-gray-700 dark:text-gray-400">
-            To provide a welcoming space for adventurous Software Engineers, Entrepreneurs, 
-            Project Managers, and many others to learn, collaborate, and deploy high-impact 
-            software projects in an industry-like environment.
-          </p>
-        </div>
-        <div className="order-4 sm:order-3 col-span-1 flex justify-center">
-          <img
-            className="h-64"
-            src={flyingRocketGif}
-            alt="Placeholder Picture"
-          />
-        </div>
-
+        {/* Blob 2 */}
+        <img className="absolute -left-64 top-[52rem] rotate-[30deg] h-[25rem] blur-3xl opacity-30" src={blob3}></img>
       </div>
 
-      <div className="sm:text-center mt-20">
+      {/* Page content */}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-24 sm:gap-y-28 justify-start items-center max-w-4xl">
+
+          {/* First content block */}
+          <div className="order-1 sm:order-1 col-span-1 pr-4">
+            <div className="whitespace-nowrap">
+              <h3 className="text-6xl font-bold text-gray-700 -ml-4">Who We Are</h3>
+            </div>
+            <h3 className="text-3xl font-bold -mt-6">Who We Are</h3>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-400">
+              A community of students and faculty at Liberty University passionate about Software! 
+              We meet weekly to learn new technologies, collaborate on projects, and network
+              with industry professionals.
+            </p>
+          </div>
+          <div className="order-2 sm:order-2 col-span-1">
+            <div className="relative">
+              <div className="relative z-10 levitate">
+                <img src={laptopIcon} alt="Laptop 3D Icon" className="icon w-64 h-64" />
+              </div>
+              <div className="absolute top-28 left-36 z-20 levitate">
+                <img src={phoneIcon} alt="Phone 3D Icon" className="icon w-36 h-36 animate-delay-500" />
+              </div>
+            </div>
+          </div>
+
+          {/* Second content block */}
+          <div className="order-3 sm:order-4 col-span-1 mt-20 sm:mt-0">
+            <div className="whitespace-nowrap">
+              <h3 className="text-6xl font-bold text-gray-700 -ml-4">Our Mission</h3>
+            </div>
+            <h3 className="text-3xl font-bold -mt-6">Our Mission</h3>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-400">
+              To provide a welcoming space for adventurous Software Engineers, Entrepreneurs, 
+              Project Managers, and many others to learn, collaborate, and deploy high-impact 
+              software projects in an industry-like environment.
+            </p>
+          </div>
+          <div className="order-4 sm:order-3 col-span-1">
+            <div className="relative h-64">
+              <div className="relative -right-16 z-10 levitate">
+                <img src={lightbulbIcon} alt="Lightbulb 3D Icon" className="icon w-36 h-36 animate-delay-0" />
+              </div>
+              <div className="absolute top-5 left-32 z-20 levitate">
+                <img src={redRocketIcon} alt="Red Rocket 3D Icon" className="icon w-52 h-52 animate-delay-1000" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="sm:text-center mt-20 sm:mt-36">
         <div className="whitespace-nowrap">
           <h3 className="text-6xl font-bold text-gray-700 -ml-4 sm:ml-0">Our Leadership</h3>
         </div>
         <h3 className="text-3xl font-bold -mt-6">Our Leadership</h3>
       </div>
 
-      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <TeamMember
+      <div className="relative mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <TeamMemberCard
           name="Jeffrey Vandever"
           title="President"
           image={jeffrey}
@@ -124,18 +156,19 @@ function About() {
           github="https://github.com/jeffreyv101"
         />
 
-        <TeamMember name="TBD" title="Vice President" image={confusedCrab} />
+        <TeamMemberCard name="TBD" title="Vice President" image={confusedCrab} />
       </div>
 
-      <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-3">
-        <TeamMember
+      <div className="relative grid grid-cols-1 gap-8 mt-4 sm:grid-cols-3">
+        <TeamMemberCard
           name="Ron Popov"
           title="Treasurer"
           image={ron}
           linkedin="https://www.linkedin.com/in/ron-popov-59ba47201/"
+          github="https://github.com/RuskiCamandir05"
         />
 
-        <TeamMember
+        <TeamMemberCard
           name="Loc Nguyen"
           title="Director of Marketing"
           image={loc}
@@ -143,7 +176,7 @@ function About() {
           github="https://github.com/LockNguyen"
         />
 
-        <TeamMember
+        <TeamMemberCard
           name="Gabe Eaton"
           title="Director of Club Projects"
           image={gabe}

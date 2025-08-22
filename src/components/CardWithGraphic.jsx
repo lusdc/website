@@ -4,7 +4,7 @@ function CardWithGraphic({ title, description, imgUrl, alt, glowColor, linkTo, s
   return (
     <>
       <div
-        className="rotating-border-wrapper shadow-sm hover:shadow-xl"
+        className="rotating-border-wrapper shadow-lg"
         style={{ ["--rotating-border-color"]: glowColor }}
       >
         <Link to={linkTo} onClick={() => {
