@@ -1,4 +1,4 @@
-import { projects } from "../assets/Projects"; // Events are soft-coded here
+import { projects } from "../data/Projects"; // Events are soft-coded here
 
 function ProjectCard({ imageUrl, title, description, hashtags, startTime, endTime, location, projectLeaders, projectMembers }) {
   const eventStart = new Date(startTime);

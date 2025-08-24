@@ -1,4 +1,4 @@
-import { events } from "../assets/Events"; // Events are soft-coded here
+import { events } from "../data/Events"; // Events are soft-coded here
 
 function EventCard({ imageUrl, title, description, startTime, endTime, location }) {
   const eventStart = new Date(startTime);

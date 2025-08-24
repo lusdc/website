@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useState } from "react";
-import clubLogo from "./assets/logo.svg";
-import confusedCrab from "./assets/404Crab.png";
+import clubLogo from "/assets/logo.svg";
+import confusedCrab from "/assets/404Crab.png";
 import "./App.css";
 
 // Importing the pages

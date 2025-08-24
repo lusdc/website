@@ -1,16 +1,17 @@
-import groupPicture from "../assets/groupPicture.jpg";
-import redUpArrowIcon from "../assets/redUpArrow.png";
-import rocketIcon from "../assets/rocket.png";
-import communityIcon from "../assets/community.jpg";
+import groupPicture from "/assets/groupPicture.jpg";
+import redUpArrowIcon from "/assets/redUpArrow.png";
+import rocketIcon from "/assets/rocket.png";
+import communityIcon from "/assets/community.jpg";
 import CardWithGraphic from "../components/CardWithGraphic";
-import blob0 from "/src/assets/blobs/blob-haikei.png";
-import blob1 from "/src/assets/blobs/blob-haikei (1).png";
-import blob2 from "/src/assets/blobs/blob-haikei (2).png";
-import blob3 from "/src/assets/blobs/blob-haikei (3).png";
-import blob4 from "/src/assets/blobs/blob-haikei (4).png";
-import blob5 from "/src/assets/blobs/blob-haikei (5).png";
-import blob6 from "/src/assets/blobs/blob-haikei (6).png";
-import blob7 from "/src/assets/blobs/blob-haikei (7).png";
+
+import blob0 from "/assets/blobs/blob-haikei.png";
+import blob1 from "/assets/blobs/blob-haikei (1).png";
+import blob2 from "/assets/blobs/blob-haikei (2).png";
+import blob3 from "/assets/blobs/blob-haikei (3).png";
+import blob4 from "/assets/blobs/blob-haikei (4).png";
+import blob5 from "/assets/blobs/blob-haikei (5).png";
+import blob6 from "/assets/blobs/blob-haikei (6).png";
+import blob7 from "/assets/blobs/blob-haikei (7).png";
 
 function Home({ setActiveLinkCallback }) {
   return (

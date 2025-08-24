@@ -1,22 +1,22 @@
-import laptopIcon from "../assets/laptop.png";
-import phoneIcon from "../assets/phone.png";
-import redRocketIcon from "../assets/redRocket.png";
-import lightbulbIcon from "../assets/lightbulb.png";
+import laptopIcon from "/assets/laptop.png";
+import phoneIcon from "/assets/phone.png";
+import redRocketIcon from "/assets/redRocket.png";
+import lightbulbIcon from "/assets/lightbulb.png";
 
-import jeffrey from "../assets/jeffrey.jpeg";
-import ron from "../assets/ron.jpeg";
-import loc from "../assets/loc.jpeg";
-import gabe from "../assets/gabe.jpeg";
-import confusedCrab from "../assets/404Crab.png";
+import jeffrey from "/assets/jeffrey.jpeg";
+import ron from "/assets/ron.jpeg";
+import loc from "/assets/loc.jpeg";
+import gabe from "/assets/gabe.jpeg";
+import confusedCrab from "/assets/404Crab.png";
 
-import blob0 from "/src/assets/blobs/blob-haikei.png";
-import blob1 from "/src/assets/blobs/blob-haikei (1).png";
-import blob2 from "/src/assets/blobs/blob-haikei (2).png";
-import blob3 from "/src/assets/blobs/blob-haikei (3).png";
-import blob4 from "/src/assets/blobs/blob-haikei (4).png";
-import blob5 from "/src/assets/blobs/blob-haikei (5).png";
-import blob6 from "/src/assets/blobs/blob-haikei (6).png";
-import blob7 from "/src/assets/blobs/blob-haikei (7).png";
+import blob0 from "/assets/blobs/blob-haikei.png";
+import blob1 from "/assets/blobs/blob-haikei (1).png";
+import blob2 from "/assets/blobs/blob-haikei (2).png";
+import blob3 from "/assets/blobs/blob-haikei (3).png";
+import blob4 from "/assets/blobs/blob-haikei (4).png";
+import blob5 from "/assets/blobs/blob-haikei (5).png";
+import blob6 from "/assets/blobs/blob-haikei (6).png";
+import blob7 from "/assets/blobs/blob-haikei (7).png";
 
 function TeamMemberCard({ name, title, image, github, linkedin }) {
   return (
