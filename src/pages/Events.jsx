@@ -44,15 +44,19 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location 
 function Events() {
   return (
     <>
+      {/* Glowing blobs */}
+      <div class="glow w-10/12 h-80 -top-20 left-1/2 -translate-x-1/2"></div>
+
+      {/* Page content */}
       <div className="w-full">
         <div className="sm:text-center">
           <div className="whitespace-nowrap">
             <h1 className="text-6xl font-bold text-gray-700 -ml-4 sm:ml-0">Upcoming Events</h1>
           </div>
-          <h1 className="text-3xl font-bold -mt-6">Upcoming Events</h1>
+          <h1 className="relative text-3xl font-bold -mt-6">Upcoming Events</h1>
         </div>
 
-        <div className="mt-16 flex flex-row flex-wrap gap-6 sm:gap-8 justify-center">
+        <div className="mt-16 flex flex-row flex-wrap gap-6 sm:gap-8 justify-center relative">
           {events
             .sort((event) => Date(event.startTime))
             .map((event) => (

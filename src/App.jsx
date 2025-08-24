@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="bg-gray-100 dark:bg-gray-800">
-        <header className="w-full bg-custom-black">
+        <header className="relative w-full bg-custom-black z-10">
           <div className="flex max-w-[90rem] mx-auto px-6 md:px-10 lg:px-16 md:justify-between items-center">
             <Link to="/" onClick={() => setActiveLink("/")}>
               <div className="flex items-center text-white">
@@ -64,7 +64,7 @@ function App() {
         </header>
 
         {/* Render the page content here */}
-        <div className="relative flex flex-col min-h-screen max-w-[60rem] lg:max-w-[80rem] mx-auto px-6 md:px-10 lg:px-16 my-16 dark:text-gray-200">
+        <div className="flex flex-col min-h-screen max-w-[60rem] lg:max-w-[80rem] mx-auto px-6 md:px-10 lg:px-16 py-16 dark:text-gray-200">
           <Routes>
             <Route path="/" element={<Home setActiveLinkCallback={setActiveLink} />} /> {/* Passing setActiveLink for clickable CardWithGraphics to call */}
             <Route path="/projects" element={<Projects />} />

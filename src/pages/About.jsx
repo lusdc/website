@@ -9,15 +9,6 @@ import loc from "/assets/loc.jpeg";
 import gabe from "/assets/gabe.jpeg";
 import confusedCrab from "/assets/404Crab.png";
 
-import blob0 from "/assets/blobs/blob-haikei.png";
-import blob1 from "/assets/blobs/blob-haikei (1).png";
-import blob2 from "/assets/blobs/blob-haikei (2).png";
-import blob3 from "/assets/blobs/blob-haikei (3).png";
-import blob4 from "/assets/blobs/blob-haikei (4).png";
-import blob5 from "/assets/blobs/blob-haikei (5).png";
-import blob6 from "/assets/blobs/blob-haikei (6).png";
-import blob7 from "/assets/blobs/blob-haikei (7).png";
-
 function TeamMemberCard({ name, title, image, github, linkedin }) {
   return (
     <div className="flex flex-col items-center p-4 mt-3 max-w-7xl text-center bg-gray-200 shadow-lg rounded-xl hover:shadow-xl dark:bg-gray-700">
@@ -75,17 +66,10 @@ function TeamMemberCard({ name, title, image, github, linkedin }) {
 function About() {
   return (
     <>
-      {/* Blobs container */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Blob 1 */}
-        <img className="absolute -left-10 top-[0rem] rotate-[30deg] h-[25rem] blur-3xl opacity-20" src={blob0}></img>
-
-        {/* Blob 2 */}
-        <img className="absolute right-0 top-[25rem] -rotate-[30deg] h-[15rem] blur-3xl opacity-30" src={blob1}></img>
-
-        {/* Blob 2 */}
-        <img className="absolute -left-64 top-[52rem] rotate-[30deg] h-[25rem] blur-3xl opacity-30" src={blob3}></img>
-      </div>
+      {/* Glowing blobs */}
+      <div class="glow w-10/12 h-80 -top-20 -left-1/4"></div>
+      <div class="glow-from-right w-4/6 h-80 top-[30rem] -right-20 -rotate-12 opacity-80"></div>
+      <div class="glow w-1/3 h-80 top-[70rem] left-[10%] opacity-100"></div>
 
       {/* Page content */}
       <div className="flex justify-center">

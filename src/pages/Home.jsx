@@ -4,29 +4,16 @@ import rocketIcon from "/assets/rocket.png";
 import communityIcon from "/assets/community.jpg";
 import CardWithGraphic from "../components/CardWithGraphic";
 
-import blob0 from "/assets/blobs/blob-haikei.png";
-import blob1 from "/assets/blobs/blob-haikei (1).png";
-import blob2 from "/assets/blobs/blob-haikei (2).png";
-import blob3 from "/assets/blobs/blob-haikei (3).png";
-import blob4 from "/assets/blobs/blob-haikei (4).png";
-import blob5 from "/assets/blobs/blob-haikei (5).png";
-import blob6 from "/assets/blobs/blob-haikei (6).png";
-import blob7 from "/assets/blobs/blob-haikei (7).png";
-
 function Home({ setActiveLinkCallback }) {
   return (
     <>
-      {/* Blobs container */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Blob 1 */}
-        <img className="absolute -left-10 top-[32rem] rotate-[30deg] h-[15rem] blur-2xl opacity-20" src={blob1}></img>
-
-        {/* Blob 2 */}
-        <img className="absolute right-0 top-[64rem] rotate-[30deg] h-[15rem] blur-3xl opacity-30" src={blob2}></img>
-      </div>
+      {/* Glowing blobs */}
+      <div class="glow w-10/12 h-80 -top-20 -left-1/4"></div>
+      <div class="glow-from-right w-4/6 h-80 top-[30rem] -right-20 -rotate-12 opacity-80"></div>
+      <div class="glow w-1/3 h-80 top-[70rem] left-[10%] opacity-40"></div>
 
       {/* Page content */}
-      <div className="flex items-center justify-between w-full mb-16 space-x-4">
+      <div className="flex items-center justify-between w-full mb-16 space-x-4 z-10">
         <div className="">
           <h2 className="text-3xl font-bold text-custom-light-orange xl:text-4xl dark:text-custom-light-orange">
             Software Development Club
@@ -73,20 +60,14 @@ function Home({ setActiveLinkCallback }) {
             </a>
           </div>
         </div>
-        <div className="relative">
-          <img
-            className="relative hidden w-auto mx-30 h-52 rounded-xl md:inline-flex lg:h-60 2xl:h-80 shadow-lg hover:shadow-xl z-10"
-            src={groupPicture}
-            alt="Software Development Club Group Picture"
-          />
-          <img
-            className="absolute right-0 -top-10 h-80 w-[40rem] opacity-30 blur-2xl z-0"
-            src={blob0}
-          ></img>
-        </div>
+        <img
+          className="hidden w-auto mx-30 h-52 rounded-xl md:inline-flex lg:h-60 2xl:h-80 shadow-lg hover:shadow-xl z-10"
+          src={groupPicture}
+          alt="Software Development Club Group Picture"
+        />
       </div>
 
-      <div className="mt-16 relative items-stretch md:justify-between md:flex md:space-x-3 space-y-3 md:space-y-0">
+      <div className="mt-16 items-stretch md:justify-between md:flex md:space-x-3 space-y-3 md:space-y-0">
         <CardWithGraphic
           title="Peer‑Led Workshops"
           description="Weekly sessions dive into languages, frameworks, and best practices—taught by members, for members—so everyone levels up together."
@@ -139,10 +120,10 @@ function Home({ setActiveLinkCallback }) {
             Event Calendar
           </h3>
         </div>
-        <h3 className="text-3xl font-bold -mt-6">Event Calendar</h3>
+        <h3 className="relative z-10 text-3xl font-bold -mt-6">Event Calendar</h3>
       </div>
 
-      <div className="flex flex-col sm:items-center aspect-square">
+      <div className="flex flex-col sm:items-center aspect-square z-10">
         <iframe
           className="w-full h-full mt-8 rounded-lg shadow-lg hover:shadow-xl"
           src="https://calendar.google.com/calendar/embed?src=fdc76a81bb683abbbbe16c6a626d49064085b3d7f5a762cd86f2fe9926f59d9e%40group.calendar.google.com&ctz=America%2FNew_York"
