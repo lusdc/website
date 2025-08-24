@@ -21,16 +21,16 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location 
   });
 
   return (
-    <div className="h-auto w-72 bg-gray-200 shadow-sm rounded-xl overflow-hidden hover:shadow-xl dark:bg-gray-700">
+    <div className="h-auto overflow-hidden bg-gray-200 shadow-sm w-72 rounded-xl hover:shadow-xl dark:bg-gray-700">
       <div className="relative w-full h-48">
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover"
+          className="object-cover w-full h-full"
         ></img>
         <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-gray-200 dark:from-gray-700 to-transparent"></div>
       </div>
-      <div className="relative px-4 pb-4 -mt-8 z-20">
+      <div className="relative z-20 px-4 pb-4 -mt-8">
         <h2 className="text-2xl font-bold dark:text-gray-200">{title}</h2>
         <p className="mt-4">{description}</p>
         <p className="mt-4">📅 {day}, {month}. {date}</p>
@@ -45,18 +45,18 @@ function Events() {
   return (
     <>
       {/* Glowing blobs */}
-      <div class="glow w-10/12 h-80 -top-20 left-1/2 -translate-x-1/2"></div>
+      <div className="w-10/12 -translate-x-1/2 glow h-80 -top-20 left-1/2"></div>
 
       {/* Page content */}
       <div className="w-full">
         <div className="sm:text-center">
           <div className="whitespace-nowrap">
-            <h1 className="text-6xl font-bold text-shadow -ml-4 sm:ml-0">Upcoming Events</h1>
+            <h1 className="-ml-4 text-6xl font-bold text-shadow sm:ml-0">Upcoming Events</h1>
           </div>
-          <h1 className="relative text-3xl font-bold -mt-6">Upcoming Events</h1>
+          <h1 className="relative -mt-6 text-3xl font-bold">Upcoming Events</h1>
         </div>
 
-        <div className="mt-16 flex flex-row flex-wrap gap-6 sm:gap-8 justify-center relative">
+        <div className="relative flex flex-row flex-wrap justify-center gap-6 mt-16 sm:gap-8">
           {events
             .sort((event) => Date(event.startTime))
             .map((event) => (

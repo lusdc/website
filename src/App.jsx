@@ -15,9 +15,9 @@ function App() {
 
   return (
     <Router>
-      <div className="bg-gray-100 dark:bg-gray-800 overflow-x-hidden">
+      <div className="overflow-x-hidden bg-gray-100 dark:bg-gray-800">
         <header className="relative z-10 w-full bg-custom-black">
-          <div className="flex max-w-[90rem] mx-auto px-4 md:px-6 lg:px-16 justify-between items-center py-3 md:py-4">
+          <div className="flex max-w-[80rem] mx-auto px-4 md:px-6 lg:px-16 justify-between items-center py-3 md:py-4">
             <Link to="/" onClick={() => setActiveLink("/")}>
               <div className="flex items-center text-white">
                 <img
@@ -25,12 +25,12 @@ function App() {
                   src={clubLogo}
                   alt="Software Development Club Logo"
                 />
-                <h1 className="ml-2 sm:ml-3 text-lg sm:text-2xl md:text-3xl font-bold">
+                <h1 className="ml-2 text-lg font-bold sm:ml-3 sm:text-2xl md:text-3xl">
                   SDC
                 </h1>
               </div>
             </Link>
-            <nav className="flex space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-10 text-white">
+            <nav className="flex space-x-3 text-white sm:space-x-4 md:space-x-6 lg:space-x-10">
               <Link
                 to="/"
                 className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-colors hover:bg-gray-700 ${

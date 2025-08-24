@@ -67,9 +67,9 @@ function About() {
   return (
     <>
       {/* Glowing blobs */}
-      <div class="glow w-10/12 h-80 -top-20 -left-1/4"></div>
-      <div class="glow-from-right w-4/6 h-80 top-[30rem] -right-20 -rotate-12 opacity-80"></div>
-      <div class="glow w-1/3 h-80 top-[70rem] left-[10%] opacity-100"></div>
+      <div className="w-10/12 glow h-80 -top-20 -left-1/4"></div>
+      <div className="glow-from-right w-4/6 h-80 top-[30rem] -right-20 -rotate-12 opacity-80"></div>
+      <div className="glow w-1/3 h-80 top-[70rem] left-[10%] opacity-100"></div>
 
       {/* Page content */}
       <div className="flex justify-center">
