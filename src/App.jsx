@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useState } from "react";
 import clubLogo from "/assets/logo.svg";
-import confusedCrab from "/assets/404Crab.png";
+import confusedCrab from "/assets/icons/404Crab.png";
 import "./App.css";
 
 // Importing the pages
@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="bg-gray-100 dark:bg-gray-800">
-        <header className="relative w-full bg-custom-black z-10">
+        <header className="relative z-10 w-full bg-custom-black">
           <div className="flex max-w-[90rem] mx-auto px-6 md:px-10 lg:px-16 md:justify-between items-center">
             <Link to="/" onClick={() => setActiveLink("/")}>
               <div className="flex items-center text-white">
