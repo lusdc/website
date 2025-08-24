@@ -1,25 +1,6 @@
 import { projects } from "../data/Projects"; // Events are soft-coded here
 
-function ProjectCard({ imageUrl, title, description, hashtags, startTime, endTime, location, projectLeaders, projectMembers }) {
-  const eventStart = new Date(startTime);
-  const eventEnd = new Date(endTime);
-
-  const month = eventStart.toLocaleString("en-US", {
-    month: "short",
-  });
-  const date = eventStart.getDate(); // Day of the month (1-31)
-  const day = eventStart.toLocaleDateString('en-US', { weekday: 'long' }); // Day of the week (Monday-Sunday)
-  const _startTime = eventStart.toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  });
-  const _endTime = eventEnd.toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  });
-
+function ProjectCard({ imageUrl, title, description, hashtags, projectLeaders, projectMembers }) {
   return (
     <div className="h-auto w-72 bg-gray-200 shadow-sm rounded-xl overflow-hidden hover:shadow-xl dark:bg-gray-700">
       <div className="relative w-full h-48">
@@ -34,11 +15,8 @@ function ProjectCard({ imageUrl, title, description, hashtags, startTime, endTim
         <h2 className="text-2xl font-bold dark:text-gray-200">{title}</h2>
         <p className="mt-4">{description}</p>
         <p className="mt-4 flex flex-wrap gap-x-1">{hashtags.map((hashtag) => <p className="font-bold text-sky-500">#{hashtag}</p>)}</p>
-        <p className="mt-4">📅 {day}, {month}. {date}</p>
-        <p className="">🕑 {_startTime} - {_endTime}</p>
-        <p className="">📍 {location}</p>
-        <p className="mt-4">{projectLeaders.join(", ")}</p> {/* Will be upgraded to people cards*/}
-        <p className="">{projectMembers.join(", ")}</p>
+        <p className="mt-4">Leaders: {projectLeaders.join(", ")}</p> {/* Will be upgraded to people cards*/}
+        <p className="">Members: {projectMembers.join(", ")}</p>
       </div>
     </div>
   );
@@ -54,7 +32,7 @@ function Projects() {
       <div className="w-full">
         <div className="sm:text-center">
           <div className="whitespace-nowrap">
-            <h1 className="text-6xl font-bold text-gray-700 -ml-4 sm:ml-0">Projects</h1>
+            <h1 className="text-6xl font-bold text-shadow -ml-4 sm:ml-0">Projects</h1>
           </div>
           <h1 className="text-3xl font-bold -mt-6 relative">Projects</h1>
         </div>
@@ -69,9 +47,6 @@ function Projects() {
                 title={project.title}
                 description={project.description}
                 hashtags={project.hashtags}
-                startTime={project.startTime}
-                endTime={project.endTime}
-                location={project.location}
                 projectLeaders={project.projectLeaders}
                 projectMembers={project.projectMembers}
               />

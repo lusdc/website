@@ -51,7 +51,7 @@ function Events() {
       <div className="w-full">
         <div className="sm:text-center">
           <div className="whitespace-nowrap">
-            <h1 className="text-6xl font-bold text-gray-700 -ml-4 sm:ml-0">Upcoming Events</h1>
+            <h1 className="text-6xl font-bold text-shadow -ml-4 sm:ml-0">Upcoming Events</h1>
           </div>
           <h1 className="relative text-3xl font-bold -mt-6">Upcoming Events</h1>
         </div>

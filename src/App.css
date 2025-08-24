@@ -2,6 +2,24 @@ body {
   background-color: rgb(23,23,23);
 }
 
+:root {
+  --background-color: #1f2937;
+  --ambient-glow-color: rgba(255, 84, 5, 0.8);
+  --text-shadow-color: #DFE3E9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1f2937;
+    --ambient-glow-color: rgba(59, 130, 246, 0.8);
+    --text-shadow-color: #374151;
+  }
+}
+
+.text-shadow {
+  color: var(--text-shadow-color);
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -292,20 +310,20 @@ html, body {
 .glow {
   position: absolute;
   z-index: 0;
-  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.8), transparent 70%);
+  background: radial-gradient(ellipse, var(--ambient-glow-color), transparent 70%);
   filter: blur(100px);
 }
 
 .glow-from-left {
   position: absolute;
   z-index: 0;
-  background: radial-gradient(ellipse at 0 0, rgba(59, 130, 246, 0.8), transparent 70%);
+  background: radial-gradient(ellipse at 0 0, var(--ambient-glow-color), transparent 70%);
   filter: blur(100px);
 }
 
 .glow-from-right {
   position: absolute;
   z-index: 0;
-  background: radial-gradient(ellipse at 100% 100%, rgba(59, 130, 246, 0.8), transparent 70%);
+  background: radial-gradient(ellipse at 100% 100%, var(--ambient-glow-color), transparent 70%);
   filter: blur(100px);
 }

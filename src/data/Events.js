@@ -1,8 +1,8 @@
 export const events = [
     {
-        'imageUrl': '/assets/events/weeklyMeetings.png',
-        'title': 'Weekly Meetings',
-        'description': 'Join us for our weekly meetings where we discuss club activities, projects, and more!',
+        'imageUrl': '/assets/events/rocketLaunch.png',
+        'title': 'Kick-off',
+        'description': 'Come with us to find out the extremely fun line-up of club activities, projects, and more! Learn how SDC can be a springboard for your career!',
         'startTime': '2025-08-25T18:00:00-04:00',
         'endTime': '2025-08-25T19:30:00-04:00',
         'location': 'SoBusi 2810'
@@ -22,21 +22,5 @@ export const events = [
         'startTime': '2025-11-03T18:00:00-05:00',
         'endTime': '2025-11-03T19:30:00-05:00',
         'location': 'SoBusi 2810'
-    },
-    {
-        'imageUrl': '/assets/events/weeklyMeetings.png',
-        'title': 'Weekly Meetings',
-        'description': 'Join us for our weekly meetings where we discuss club activities, projects, and more!',
-        'startTime': '2025-08-25T18:00:00-04:00',
-        'endTime': '2025-08-25T19:30:00-04:00',
-        'location': 'SoBusi 2810'
-    },
-    {
-        'imageUrl': '/assets/events/hackthon.png',
-        'title': '12 Hour Hackathon',
-        'description': 'Join us for our first 12-hour hackathon ever judged by industry professionals! This is a great opportunity to work on a team to build a project, learn new skills, and network with others.',
-        'startTime': '2025-09-13T09:00:00-04:00',
-        'endTime': '2025-09-13T21:00:00-04:00',
-        'location': 'School of Business'
-    },
+    }
 ];

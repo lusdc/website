@@ -116,7 +116,7 @@ function Home({ setActiveLinkCallback }) {
 
       <div className="sm:text-center">
         <div className="whitespace-nowrap">
-          <h3 className="text-6xl font-bold text-gray-700 -ml-4 sm:ml-0">
+          <h3 className="text-6xl font-bold text-shadow -ml-4 sm:ml-0">
             Event Calendar
           </h3>
         </div>
