@@ -66,8 +66,8 @@ function Home({ setActiveLinkCallback }) {
             >
               <svg  
                 xmlns="http://www.w3.org/2000/svg"  
-                width="30"  
-                height="30"  
+                width="35"  
+                height="35"  
                 viewBox="0 0 24 24"  
                 fill="currentColor"  
                 className="icon icon-tabler icons-tabler-filled icon-tabler-brand-discord fill-black dark:fill-white hover:scale-110"

@@ -13,7 +13,8 @@ export const events = [
         'description': 'Join us for our first 12-hour hackathon ever judged by industry professionals! This is a great opportunity to work on a team to build a project, learn new skills, and network with others.',
         'startTime': '2025-09-13T09:00:00-04:00',
         'endTime': '2025-09-13T21:00:00-04:00',
-        'location': 'School of Business'
+        'location': 'School of Business',
+        'eventLink': 'https://docs.google.com/forms/d/e/1FAIpQLSd-d9oLzninUANzxWkBiV62fHX38ftfq4SsKdm54YHKeh5CqA/viewform?usp=header'
     },
     {
         'imageUrl': '/assets/events/aiPanel.jpg',

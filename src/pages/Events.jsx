@@ -1,6 +1,6 @@
 import { events } from "../data/Events"; // Events are soft-coded here
 
-function EventCard({ imageUrl, title, description, startTime, endTime, location }) {
+function EventCard({ imageUrl, title, description, startTime, endTime, location, eventLink }) {
   const eventStart = new Date(startTime);
   const eventEnd = new Date(endTime);
 
@@ -36,6 +36,7 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location 
         <p className="mt-4">📅 {day}, {month}. {date}</p>
         <p className="">🕑 {_startTime} - {_endTime}</p>
         <p className="">📍 {location}</p>
+        {eventLink && <p className="">🔗 <a href={eventLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Sign Up</a></p>}
       </div>
     </div>
   );
@@ -68,6 +69,7 @@ function Events() {
                 startTime={event.startTime}
                 endTime={event.endTime}
                 location={event.location}
+                eventLink={event.eventLink}
               />
             ))}
         </div>
