@@ -99,7 +99,7 @@ function Home({ setActiveLinkCallback }) {
           We meet every Monday at 6 PM in SoBusi 2810. All are welcome!
         </h2>
 
-        <button class="mt-6 button w-36 mx-auto">
+        <button class="mt-6 button w-auto mx-auto">
           <svg
             viewBox="0 0 16 16"
             class="bi bi-lightning-charge-fill"

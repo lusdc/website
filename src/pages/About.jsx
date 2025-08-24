@@ -112,10 +112,10 @@ function About() {
           </div>
           <div className="order-4 sm:order-3 col-span-1">
             <div className="relative h-64">
-              <div className="relative -right-16 z-10 levitate">
+              <div className="relative left-5 z-10 levitate">
                 <img src={lightbulbIcon} alt="Lightbulb 3D Icon" className="icon w-36 h-36 animate-delay-0" />
               </div>
-              <div className="absolute top-5 left-32 z-20 levitate">
+              <div className="absolute top-5 left-24 z-20 levitate">
                 <img src={redRocketIcon} alt="Red Rocket 3D Icon" className="icon w-52 h-52 animate-delay-1000" />
               </div>
             </div>
@@ -131,7 +131,7 @@ function About() {
         <h3 className="text-3xl font-bold -mt-6">Our Leadership</h3>
       </div>
 
-      <div className="relative mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="relative mt-8 grid grid-cols-1 gap-x-4 sm:grid-cols-2">
         <TeamMemberCard
           name="Jeffrey Vandever"
           title="President"
@@ -143,7 +143,7 @@ function About() {
         <TeamMemberCard name="TBD" title="Vice President" image={confusedCrab} />
       </div>
 
-      <div className="relative grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div className="relative grid grid-cols-1 gap-x-4 sm:grid-cols-3">
         <TeamMemberCard
           name="Ron Popov"
           title="Treasurer"
