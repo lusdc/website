@@ -98,7 +98,7 @@ function App() {
         </div>
 
         <footer className="py-4 text-gray-200 bg-custom-black">
-          <div className="flex items-center justify-between max-w-[90rem] mx-auto px-4">
+          <div className="flex items-center justify-between max-w-[80rem] mx-auto px-4">
             <p className="text-xs">Made with ❤️ by Jeffrey and Loc</p>
           </div>
         </footer>
