@@ -9,7 +9,7 @@ function Home({ setActiveLinkCallback }) {
     <>
       {/* Glowing blobs */}
       <div className="w-10/12 glow h-80 -top-20 -left-1/4"></div>
-      <div className="glow-from-right w-4/6 h-80 top-[30rem] -right-20 -rotate-12 opacity-80"></div>
+      <div className="glow-from-right w-4/6 h-80 top-[30rem] right-1 opacity-80"></div>
       <div className="glow w-1/3 h-80 top-[70rem] left-[10%] opacity-40"></div>
 
       {/* Page content */}

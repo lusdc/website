@@ -68,7 +68,7 @@ function About() {
     <>
       {/* Glowing blobs */}
       <div className="w-10/12 glow h-80 -top-20 -left-1/4"></div>
-      <div className="glow-from-right w-4/6 h-80 top-[30rem] -right-20 -rotate-12 opacity-80"></div>
+      <div className="glow-from-right w-4/6 h-80 top-[30rem] right-1 -rotate-12 opacity-80"></div>
       <div className="glow w-1/3 h-80 top-[70rem] left-[10%] opacity-100"></div>
 
       {/* Page content */}
@@ -126,7 +126,7 @@ function About() {
 
       <div className="mt-20 sm:text-center sm:mt-36">
         <div className="whitespace-nowrap">
-          <h3 className="-ml-4 text-6xl font-bold text-shadow sm:ml-0">Our Leadership</h3>
+          <h3 className="-ml-4 text-5xl font-bold sm:text-6xl text-shadow sm:ml-0">Our Leadership</h3>
         </div>
         <h3 className="-mt-6 text-3xl font-bold">Our Leadership</h3>
       </div>
