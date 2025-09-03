@@ -110,6 +110,23 @@ function Home({ setActiveLinkCallback }) {
         />
       </div>
 
+      {/* Hackathon Promotional Ad */}
+      <div className="relative mt-16 mb-16">
+        <div className="p-8 shadow-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 rounded-xl">
+          <div className="text-center text-white">
+            <h2 className="text-4xl font-bold">🏆 SDC 12 HOUR HACKATHON 🏆</h2>
+            <h3 className="mb-4 text-3xl font-semibold">FALL '25</h3>
+            <p className="mb-6 text-xl">Code. Create. Compete.</p>
+            <a 
+              href="/hackathon" 
+              className="inline-block px-8 py-3 font-bold text-purple-600 transition-colors duration-200 transform bg-white rounded-lg shadow-lg hover:bg-gray-100 hover:shadow-xl hover:scale-105"
+            >
+              Learn More & Register →
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="flex flex-col items-center my-48 text-center">
         <h2 className="text-2xl">
           We meet every Monday at 6 PM in SoBusi 2810. All are welcome!
