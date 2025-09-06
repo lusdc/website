@@ -45,11 +45,11 @@ const Hackathon = () => {
                 <header className="mb-16 text-center">
                     <div className="whitespace-nowrap">
                         <h1 className="-ml-4 text-6xl font-bold text-shadow sm:ml-0 md:text-7xl">
-                            Hackathon
+                            SDC Hackathon
                         </h1>
                     </div>
                     <h1 className="relative -mt-6 text-4xl font-bold text-gray-900 dark:text-gray-100 md:text-5xl">
-                        Software Development Club Hackathon
+                        SDC Hackathon
                     </h1>
                     <h2 className='mb-4 text-2xl font-semibold text-gray-700 dark:text-gray-400'>12 Hour Hackathon</h2>
                     <p className="text-xl font-medium text-gray-600 dark:text-gray-400">Code. Create. Compete.</p>
@@ -72,10 +72,10 @@ const Hackathon = () => {
                         <div className="p-6 transition-shadow duration-200 bg-gray-100 border rounded-xl dark:bg-gray-800 dark:border-gray-600 hover:shadow-lg">
                             <h3 className="mb-3 text-lg font-semibold dark:text-gray-100">🍕 Food</h3>
                             <p className="text-gray-700 dark:text-gray-300">Lunch & Dinner Provided</p>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">(Jersey Mikes & Chick-fil-A)</p>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">(Jersey Mikes & Domino's)</p>
                         </div>
                     </div>
-                    <div className="mt-8 text-center">
+                    <div className="mx-auto mt-8 text-center">
                         <a 
                             href="https://docs.google.com/forms/d/e/1FAIpQLSd-d9oLzninUANzxWkBiV62fHX38ftfq4SsKdm54YHKeh5CqA/viewform" 
                             className="inline-flex items-center gap-2 button"
@@ -102,8 +102,8 @@ const Hackathon = () => {
                         {[
                             { time: "8:45 AM", event: "Opening Ceremony & Team Formation" },
                             { time: "9:00 AM", event: "Hacking Begins!" },
-                            { time: "12:00 PM", event: "Lunch Break" },
-                            { time: "6:00 PM", event: "Dinner Break" },
+                            { time: "12:00 PM", event: "Lunch Served" },
+                            { time: "6:00 PM", event: "Dinner Served" },
                             { time: "9:00 PM", event: "Final Submissions Due & Closing" }
                         ].map((item, index) => (
                             <div key={index} className="flex flex-col p-3 pb-4 transition-colors duration-200 border-b border-gray-300 rounded-lg last:border-b-0 dark:border-gray-600 sm:flex-row sm:items-center hover:bg-gray-100 dark:hover:bg-gray-800">
@@ -119,15 +119,15 @@ const Hackathon = () => {
                         <div className="p-6 transition-shadow duration-300 border-2 border-yellow-400 shadow-lg rounded-xl bg-gradient-to-br from-yellow-100 to-yellow-200 dark:from-yellow-200 dark:to-yellow-300 hover:shadow-xl">
                             <h3 className="mb-4 text-2xl font-bold text-gray-900">🥇 1st Place</h3>
                             <ul className="space-y-2 text-gray-700 dark:text-gray-800">
-                                <li>• WYZE Noise Cancelling Headphones</li>
-                                <li>• 100hz Monitor</li>
+                                <li>• Noise Cancelling Headphones</li>
+                                <li>• Full HD 100hz Monitor</li>
                                 <li>• Owalla Water Bottle</li>
                             </ul>
                         </div>
                         <div className="p-6 transition-shadow duration-300 border-2 border-gray-400 shadow-lg rounded-xl dark:border-gray-500 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-200 dark:to-gray-300 hover:shadow-xl">
                             <h3 className="mb-4 text-2xl font-bold text-gray-900">🥈 2nd Place</h3>
                             <ul className="space-y-2 text-gray-700 dark:text-gray-800">
-                                <li>• Amazfit Bip 6 Smart Watch</li>
+                                <li>• Raspberry Pi 5 8 GB</li>
                             </ul>
                         </div>
                     </div>
@@ -137,12 +137,48 @@ const Hackathon = () => {
                     </div>
                 </ExpandableSection>
 
+                <ExpandableSection id="resources" title="Provided Resources">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        {[
+                            {title: "Starter Code Repository", desc: "A GitHub repository with everything you need to get started.", link: "https://github.com/HappyHackingSpace/Awesome-Hackathon?tab=readme-ov-file"},
+                            {title: "Hackathon Theme Document", desc: "A document outlining the theme and guidelines for the hackathon.", link: ""}
+                        ].map((resource, index) => (
+                            <div key={index} className="p-6 transition-shadow duration-200 bg-gray-100 border rounded-xl dark:bg-gray-800 dark:border-gray-600 hover:shadow-lg">
+                                <h3 className="mb-3 text-lg font-bold text-custom-light-orange dark:text-custom-light-orange">{resource.title}</h3>
+                                <p className="mb-4 text-gray-700 dark:text-gray-300">{resource.desc}</p>
+                                <a 
+                                    href={resource.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 bg-gray-600 rounded-lg hover:bg-gray-700"
+                                >
+                                    <svg
+                                        className="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                        />
+                                    </svg>
+                                    Access Resource
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </ExpandableSection>
+
                 <ExpandableSection id="rules" title="Rules & Guidelines">
                     <ol className="mb-6 space-y-4 text-gray-700 dark:text-gray-300">
                         {[
                             "All submissions must be school appropriate",
                             "All projects must fit with the theme of the hackathon",
-                            "Generative AI tools are allowed, however obvious overuse of these tools found in submissions will result in disqualification",
+                            "Generative AI tools are allowed, however obvious overuse of these tools found in submissions will result in points lost",
                             "Using existing repositories outside of provided resources is strictly prohibited (no cloning or forking other repos)",
                             "Only club officers may provide assistance if you encounter major issues",
                             "Club officers will not complete your project for you - they're only available to help you get unstuck",
@@ -165,13 +201,29 @@ const Hackathon = () => {
                     </div>
                 </ExpandableSection>
 
+                <ExpandableSection id="judging" title="Judging Criteria">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        {[
+                            { title: "Design & User Experience", desc: "Is the project functional, visually appealing, and easy to use?" },
+                            { title: "Creativity with Theme", desc: "How innovative and original is the project? How well does it fit with the chosen theme?" },
+                            { title: "Practical Use", desc: "Can this project be used to solve a real world problem or address a specific need?" },
+                            { title: "Technical Complexity", desc: "How challenging was the implementation of the project?" }
+                        ].map((criteria, index) => (
+                            <div key={index} className="p-6 transition-shadow duration-200 bg-gray-100 border rounded-xl dark:bg-gray-800 dark:border-gray-600 hover:shadow-lg">
+                                <h3 className="mb-3 text-lg font-bold text-custom-light-orange dark:text-custom-light-orange">{criteria.title}</h3>
+                                <p className="text-gray -700 dark:text-gray-300">{criteria.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </ExpandableSection>
+
                 <ExpandableSection id="submission" title="How to Submit">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                         {[
                             { title: "Step 1: Prepare Your Project", desc: "Ensure your project is complete and functional by 9:00 PM." },
                             { title: "Step 2: Submit Your Code", desc: "Push your final code to the designated repository created at the event and ensure all changes are committed by the deadline. Any changes introduced after the deadline will not be considered for judging." },
                             { title: "Step 3: Email it to jlvandever@liberty.edu", desc: "Email a link to your GitHub repository containing the project code. Make sure the repository is public." },
-                            { title: "Step 4: Create a Presentation", desc: "Tomorrow before 3 PM, prepare a 3-5 minute demo showcasing your project's features and functionality, please do not speak in this recording (recording sent to judges will be muted)." }
+                            { title: "Step 4: Create a Presentation", desc: "Tomorrow (09/14) by 11:59 PM, prepare a 2 minute max demo showcasing your project's features and functionality, please do not speak in this recording (recording sent to judges will be muted)." }
                         ].map((step, index) => (
                             <div key={index} className="p-6 transition-shadow duration-200 bg-gray-100 border rounded-xl dark:bg-gray-800 dark:border-gray-600 hover:shadow-lg">
                                 <h3 className="mb-3 text-lg font-bold text-custom-light-orange dark:text-custom-light-orange">{step.title}</h3>
