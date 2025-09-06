@@ -25,7 +25,7 @@ const Hackathon = () => {
                     </span>
                 </button>
                 {isExpanded && (
-                    <div className="px-6 pb-6 border-t border-gray-300 dark:border-gray-600">
+                    <div className="p-6 border-t border-gray-300 dark:border-gray-600">
                         {children}
                     </div>
                 )}
@@ -78,7 +78,7 @@ const Hackathon = () => {
                     <div className="mx-auto mt-8 text-center">
                         <a 
                             href="https://docs.google.com/forms/d/e/1FAIpQLSd-d9oLzninUANzxWkBiV62fHX38ftfq4SsKdm54YHKeh5CqA/viewform" 
-                            className="inline-flex items-center gap-2 button"
+                            className="inline-flex items-center justify-center gap-2 button"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -86,8 +86,8 @@ const Hackathon = () => {
                                 viewBox="0 0 16 16"
                                 className="bi bi-lightning-charge-fill"
                                 fill="currentColor"
-                                height="16"
-                                width="16"
+                                height="24"
+                                width="24"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"></path>
@@ -247,7 +247,7 @@ const Hackathon = () => {
                                 href="https://discord.gg/YNGmUVba2Q" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 button"
+                                className="inline-flex items-center justify-center gap-2 button"
                             >
                                 <svg  
                                     xmlns="http://www.w3.org/2000/svg"  
