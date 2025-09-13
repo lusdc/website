@@ -7,6 +7,7 @@ import jeffrey from "/assets/people/jeffrey.jpeg";
 import ron from "/assets/people/ron.jpeg";
 import loc from "/assets/people/loc.jpeg";
 import gabe from "/assets/people/gabe.jpeg";
+import veronica from "/assets/people/veronica.jpeg";
 import confusedCrab from "/assets/icons/404Crab.png";
 
 function TeamMemberCard({ name, title, image, github, linkedin }) {
@@ -68,7 +69,7 @@ function About() {
     <>
       {/* Glowing blobs */}
       <div className="w-10/12 glow h-80 -top-20 -left-1/4"></div>
-      <div className="glow-from-right w-4/6 h-80 top-[30rem] right-1 -rotate-12 opacity-80"></div>
+      <div className="glow-from-right w-4/6 h-80 top-[30rem] right-1 opacity-80"></div>
       <div className="glow w-1/3 h-80 top-[70rem] left-[10%] opacity-100"></div>
 
       {/* Page content */}
@@ -143,7 +144,7 @@ function About() {
         <TeamMemberCard name="TBD" title="Vice President" image={confusedCrab} />
       </div>
 
-      <div className="relative grid grid-cols-1 gap-x-4 sm:grid-cols-3">
+      <div className="relative grid grid-cols-1 gap-x-4 sm:grid-cols-4">
         <TeamMemberCard
           name="Ron Popov"
           title="Treasurer"
@@ -166,6 +167,14 @@ function About() {
           image={gabe}
           linkedin="https://www.linkedin.com/in/gabeeaton/"
           github="https://github.com/gabeeaton"
+        />
+
+        <TeamMemberCard
+          name="Veronica Jonas"
+          title="External Relations Lead"
+          image={veronica}
+          linkedin="https://www.linkedin.com/in/veronica-jonas/"
+          github="https://github.com/veronicaj2034"
         />
       </div>
     </>

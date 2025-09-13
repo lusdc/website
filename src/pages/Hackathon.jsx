@@ -37,7 +37,7 @@ const Hackathon = () => {
         <>
             {/* Glowing blobs */}
             <div className="w-10/12 glow h-80 -top-20 -left-1/4"></div>
-            <div className="glow-from-right w-4/6 h-80 top-[30rem] right-0 -rotate-12 opacity-80"></div>
+            <div className="glow-from-right w-4/6 h-80 top-[30rem] right-0 opacity-80"></div>
             <div className="glow w-1/3 h-80 top-[70rem] left-[10%] opacity-100"></div>
 
             {/* Page content */}
@@ -54,6 +54,22 @@ const Hackathon = () => {
                     <h2 className='mb-4 text-2xl font-semibold text-gray-700 dark:text-gray-400'>12 Hour Hackathon</h2>
                     <p className="text-xl font-medium text-gray-600 dark:text-gray-400">Code. Create. Compete.</p>
                 </header>
+
+                <div className="relative mt-16 mb-16 overflow-hidden rounded-lg shadow-2xl">
+                    <div className="p-8 shadow-2xl bg-gradient-to-r from-blue-600 to-yellow-300">
+                    <div className="text-center text-white">
+                        <h2 className="text-4xl font-bold">🏝️ Hackathon Theme 🗺️</h2>
+                        <h3 className="mb-4 text-3xl font-semibold">Travel</h3>
+                        <a 
+                        href="https://libertyuniv-my.sharepoint.com/:w:/g/personal/jlvandever_liberty_edu/EZQKFgf7GSlOnARczTwEqYEBGrrJ2xUB18PWN9dyvHmpEg?e=dnIL2t" 
+                        target="_blank" 
+                        className="inline-block px-8 py-3 font-bold text-purple-600 transition-colors duration-200 transform bg-white rounded-lg shadow-lg hover:bg-gray-100 hover:shadow-xl hover:scale-105"
+                        >
+                        Learn More about the Theme →
+                        </a>
+                    </div>
+                    </div>
+                </div>
 
                 <ExpandableSection id="info" title="Event Information" defaultExpanded={true}>
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -74,26 +90,6 @@ const Hackathon = () => {
                             <p className="text-gray-700 dark:text-gray-300">Lunch & Dinner Provided</p>
                             <p className="text-sm text-gray-600 dark:text-gray-400">(Jersey Mikes & Domino's)</p>
                         </div>
-                    </div>
-                    <div className="mx-auto mt-8 text-center">
-                        <a 
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSd-d9oLzninUANzxWkBiV62fHX38ftfq4SsKdm54YHKeh5CqA/viewform" 
-                            className="inline-flex items-center justify-center gap-2 button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <svg
-                                viewBox="0 0 16 16"
-                                className="bi bi-lightning-charge-fill"
-                                fill="currentColor"
-                                height="24"
-                                width="24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"></path>
-                            </svg>
-                            Register Now!
-                        </a>
                     </div>
                 </ExpandableSection>
 
@@ -141,7 +137,7 @@ const Hackathon = () => {
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                         {[
                             {title: "Starter Code Repository", desc: "A GitHub repository with everything you need to get started.", link: "https://github.com/HappyHackingSpace/Awesome-Hackathon?tab=readme-ov-file"},
-                            {title: "Hackathon Theme Document", desc: "A document outlining the theme and guidelines for the hackathon.", link: ""}
+                            {title: "Hackathon Theme Document", desc: "A document outlining the theme and guidelines for the hackathon.", link: "https://libertyuniv-my.sharepoint.com/:w:/g/personal/jlvandever_liberty_edu/EZQKFgf7GSlOnARczTwEqYEBGrrJ2xUB18PWN9dyvHmpEg?e=dnIL2t"}
                         ].map((resource, index) => (
                             <div key={index} className="p-6 transition-shadow duration-200 bg-gray-100 border rounded-xl dark:bg-gray-800 dark:border-gray-600 hover:shadow-lg">
                                 <h3 className="mb-3 text-lg font-bold text-custom-light-orange dark:text-custom-light-orange">{resource.title}</h3>
@@ -223,7 +219,7 @@ const Hackathon = () => {
                             { title: "Step 1: Prepare Your Project", desc: "Ensure your project is complete and functional by 9:00 PM." },
                             { title: "Step 2: Submit Your Code", desc: "Push your final code to the designated repository created at the event and ensure all changes are committed by the deadline. Any changes introduced after the deadline will not be considered for judging." },
                             { title: "Step 3: Email it to jlvandever@liberty.edu", desc: "Email a link to your GitHub repository containing the project code. Make sure the repository is public." },
-                            { title: "Step 4: Create a Presentation", desc: "Tomorrow (09/14) by 11:59 PM, prepare a 2 minute max demo showcasing your project's features and functionality, please do not speak in this recording (recording sent to judges will be muted)." }
+                            { title: "Step 4: Create a Presentation", desc: "Tomorrow (09/14) by 11:59 PM, prepare a 2 minute max demo showcasing your project's features and functionality, please do not speak in this recording (recording sent to judges will be muted). Email this as well to jlvandever@liberty.edu." }
                         ].map((step, index) => (
                             <div key={index} className="p-6 transition-shadow duration-200 bg-gray-100 border rounded-xl dark:bg-gray-800 dark:border-gray-600 hover:shadow-lg">
                                 <h3 className="mb-3 text-lg font-bold text-custom-light-orange dark:text-custom-light-orange">{step.title}</h3>
