@@ -79,7 +79,6 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<Events />} />
-            <Route path="/hackathon" element={<Hackathon />} />
             <Route
               path="*"
               element={

@@ -14,7 +14,6 @@ export const events = [
         'startTime': '2025-09-13T09:00:00-04:00',
         'endTime': '2025-09-13T21:00:00-04:00',
         'location': 'School of Business',
-        'eventLink': 'https://docs.google.com/forms/d/e/1FAIpQLSd-d9oLzninUANzxWkBiV62fHX38ftfq4SsKdm54YHKeh5CqA/viewform?usp=header'
     },
     {
         'imageUrl': '/assets/events/aiPanel.jpg',
