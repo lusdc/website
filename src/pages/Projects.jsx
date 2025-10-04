@@ -15,7 +15,8 @@ function ProjectCard({ imageUrl, title, description, hashtags, projectLeaders, p
         <h2 className="text-2xl font-bold dark:text-gray-200">{title}</h2>
         <p className="mt-4">{description}</p>
         <p className="flex flex-wrap mt-4 gap-x-1">{hashtags.map((hashtag) => <p className="font-bold text-sky-500">#{hashtag}</p>)}</p>
-        {projectLeaders.length > 0 && <p className="mt-4">Leaders: {projectLeaders.join(", ")}</p>}
+        {projectLeaders.length > 1 && <p className="mt-4">Leaders: {projectLeaders.join(", ")}</p>}
+        {projectLeaders.length == 1 && <p className="mt-4">Leader: {projectLeaders.join(", ")}</p>}
         {projectMembers.length > 0 && <p className="">Members: {projectMembers.join(", ")}</p>}
       </div>
     </div>

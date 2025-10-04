@@ -5,43 +5,52 @@ export const projects = [
         'title': 'Rot Menu Alert',
         'description': 'Building an application that scrapes the dining hall menus and sends alerts when favorite foods appear.',
         'hashtags': ["WebDev", "FullStack", "Food"],
-        'projectLeaders': [],
+        'projectLeaders': ["Ron Popov"],
         'projectMembers': []
     },
-    {
-        'status': 'active',
-        'imageUrl': '/assets/projects/prayer.jpg',
-        'title': 'Prayer Request Wall',
-        'description': 'Building a Full-Stack Digital Wall for sharing prayer requests',
-        'hashtags': ["FullStack", "WebDev", "Prayer"],
-        'projectLeaders': [],
-        'projectMembers': []
-    },
-    {
-        'status': 'active',
-        'imageUrl': '/assets/projects/welcome.jpg',
-        'title': 'SDC Discord Bot',
-        'description': 'A Discord bot for the Software Development Club that automates welcomes, reminders, and event management.',
-        'hashtags': ["Discord", "JavaScript"],
-        'projectLeaders': [],
-        'projectMembers': []
-    },
+    // {
+    //     'status': 'active',
+    //     'imageUrl': '/assets/projects/prayer.jpg',
+    //     'title': 'Prayer Request Wall',
+    //     'description': 'Building a Full-Stack Digital Wall for sharing prayer requests',
+    //     'hashtags': ["FullStack", "WebDev", "Prayer"],
+    //     'projectLeaders': [],
+    //     'projectMembers': []
+    // },
+    // {
+    //     'status': 'active',
+    //     'imageUrl': '/assets/projects/welcome.jpg',
+    //     'title': 'SDC Discord Bot',
+    //     'description': 'A Discord bot for the Software Development Club that automates welcomes, reminders, and event management.',
+    //     'hashtags': ["Discord", "JavaScript"],
+    //     'projectLeaders': [],
+    //     'projectMembers': []
+    // },
     {
         'status': 'active',
         'imageUrl': '/assets/projects/resume.jpg',
         'title': 'AI Resume Analyzer',
         'description': 'An AI-powered tool that analyzes resumes and provides feedback to improve job applications.',
         'hashtags': ["GenerativeAI", "Job Search"],
-        'projectLeaders': [],
+        'projectLeaders': ["Veronica Jonas"],
         'projectMembers': []
     },
     {
         'status': 'active',
-        'imageUrl': '/assets/projects/bible.jpg',
-        'title': 'Daily Verse / Devotional Messenger',
-        'description': 'Authomatically sends a verse or devotional each day working through app, email, or Discord bot.',
-        'hashtags': ["FullStack", "Discord", "React Native"],
-        'projectLeaders': [],
+        'imageUrl': '/assets/projects/welcome.jpg',
+        'title': 'Generative AI Assistant',
+        'description': 'An collaborative project to build and extend AI chatbots for various use cases.',
+        'hashtags': ["GenerativeAI", "Job Search"],
+        'projectLeaders': ["Graham Thomasson"],
         'projectMembers': []
     }
+    // {
+    //     'status': 'active',
+    //     'imageUrl': '/assets/projects/bible.jpg',
+    //     'title': 'Daily Verse / Devotional Messenger',
+    //     'description': 'Authomatically sends a verse or devotional each day working through app, email, or Discord bot.',
+    //     'hashtags': ["FullStack", "Discord", "React Native"],
+    //     'projectLeaders': [],
+    //     'projectMembers': []
+    // }
 ];
