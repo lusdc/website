@@ -108,7 +108,8 @@ function Home({ setActiveLinkCallback }) {
           imgUrl={communityIcon}
           glowColor="rgba(31, 173, 255, 0.6)"
           rotatingBorderAngle="280deg"
-          linkTo="/"
+          linkTo="https://discord.gg/YNGmUVba2Q"
+          target="_blank"
           setActiveLinkCallback={setActiveLinkCallback}
         />
       </div>
@@ -118,19 +119,25 @@ function Home({ setActiveLinkCallback }) {
           We meet every Monday at 6 PM in SoBusi 2810. All are welcome!
         </h2>
 
-        <MagneticButton className="mt-4">
-          <svg
-              viewBox="0 0 16 16"
-              className="bi bi-lightning-charge-fill"
-              fill="currentColor"
-              height="16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"></path>
-            </svg>
-            Join Us!
-          </MagneticButton>
+        <a
+              href="https://discord.gg/YNGmUVba2Q"
+              target="_blank"
+              rel="noopener noreferrer"
+        >
+          <MagneticButton className="mt-4">
+            <svg
+                viewBox="0 0 16 16"
+                className="bi bi-lightning-charge-fill"
+                fill="currentColor"
+                height="16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"></path>
+              </svg>
+              Join Us!
+            </MagneticButton>
+          </a>
       </div>
 
       

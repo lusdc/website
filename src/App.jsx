@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useState } from "react";
 import clubLogo from "/assets/icons/crab.gif";
 import luLogo from "/assets/icons/luLogo.png";
+import clubStaticLogo from "/logo.png";
 import confusedCrab from "/assets/icons/404Crab.png";
 import "./App.css";
 
@@ -31,19 +32,31 @@ function App() {
                 behavior: 'smooth'
               })
             }}>
+
+              {/* Logo */}
               <div className="flex items-center text-white">
+
                 <div className="relative w-12 sm:w-16 md:w-20">
-                  <img
-                    className="absolute z-10 w-[25%] top-[55%] left-[40%]"
-                    src={luLogo}
-                    alt="LU Logo"
-                  />
-                  <img
-                    className="relative"
-                    src={clubLogo}
-                    alt="Software Development Club Logo"
-                  />
+                  {/* LU word on Crab Logo */}
+                  <picture className="absolute z-10 w-[25%] top-[55%] left-[40%]">
+                    {/* Don't animate logo on mobile devices. Load only on viewports 768px wide or larger */}
+                    <source media="(min-width: 768px)" srcSet={luLogo} />
+
+                    {/* For smaller screens, no image is downloaded */}
+                    <img src="" />
+                  </picture>
+
+                  {/* Dancing Crab Logo */}
+                  <picture className="relative">
+                    {/* For smaller screens, use static logo instead */}
+                    <source media="(min-width: 768px)" srcSet={clubLogo} />
+
+                    {/* Don't animate logo on mobile devices. Load only on viewports 768px wide or larger */}
+                    <img src={clubStaticLogo} alt="Software Development Club Logo" />
+                  </picture>
                 </div>
+
+                {/* Page Title */}
                 <h1 className="ml-2 text-lg font-bold sm:ml-3 sm:text-2xl md:text-3xl">
                   SDC
                 </h1>

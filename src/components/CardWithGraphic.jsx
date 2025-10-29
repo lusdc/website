@@ -25,7 +25,13 @@ function CardWithGraphic({ title, description, imgUrl, alt, glowColor, rotatingB
 
             <h2 className="text-xl font-bold dark:text-gray-100">{title}</h2>
             <p className="mt-1 text-base text-gray-700 dark:text-gray-400">{description}</p>
-            <img className="rotating-border-card-icon" src={imgUrl} alt={alt} />
+            <picture className="rotating-border-card-icon">
+              {/* Don't load icons on mobile devices. Load only on viewports 768px wide or larger */}
+              <source media="(min-width: 768px)" srcSet={imgUrl} />
+
+              {/* For smaller screens, no image is downloaded */}
+              <img alt={alt} />
+            </picture>
           </div>
         </Link>
       </div>

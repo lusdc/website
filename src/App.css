@@ -116,6 +116,27 @@ body {
   padding: 0px; /* thickness of the border */
 }
 
+/* Styles for screens 768px and wider (tablets and desktops) */
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .rotating-border-wrapper {
+    position: relative;
+    border-radius: 0.75rem;
+    
+    background-image: conic-gradient(
+      from var(--rotating-glow-curr-angle, 0deg),
+      transparent 25%,
+      var(--rotating-border-color) 90%,
+      transparent 95%
+    );
+      
+    animation: none;
+    transition: none;
+    
+    /* Start hidden until hover */
+    padding: 0px; /* thickness of the border */
+  }
+}
+
 .rotating-border-wrapper::after {
   content: '';
   position: absolute;
