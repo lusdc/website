@@ -21,23 +21,50 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location,
   });
 
   return (
-    <div className="h-auto overflow-hidden bg-gray-200 shadow-sm w-72 rounded-xl hover:shadow-xl dark:bg-gray-700">
+    <div className="h-auto overflow-hidden w-80 rounded-2xl
+              bg-white/10 dark:bg-gray-900/20
+                backdrop-blur-xl backdrop-saturate-150
+                border border-white/20 dark:border-gray-700/30
+                shadow-2xl shadow-black/10 dark:shadow-black/50
+                transition-all duration-500 ease-out
+                hover:scale-[1.02] hover:shadow-3xl
+                hover:border-white/40 dark:hover:border-gray-600/50">
+
+      {/* Inner glow effect */}
+      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+        <div className="absolute inset-[-50%] 
+                        bg-gradient-to-br from-transparent via-white/5 to-transparent
+                        opacity-50" />
+      </div>
+
       <div className="relative w-full h-48">
+        {/* Image */}
         <img
           src={imageUrl}
           alt={title}
           className="object-cover w-full h-full"
         ></img>
-        <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-gray-200 dark:from-gray-700 to-transparent"></div>
+
+        {/* Title */}
+        <h2 className="absolute bottom-3 px-6 z-10 text-2xl font-bold dark:text-gray-200">{title}</h2>
+
+        {/* Fade to clarify Title */}
+        <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-white/10 dark:from-gray-900/80 to-transparent"></div>
       </div>
-      <div className="relative z-20 px-4 pb-4 -mt-8">
-        <h2 className="text-2xl font-bold dark:text-gray-200">{title}</h2>
-        <p className="mt-4">{description}</p>
+
+      {/* Description */}
+      <div className="relative z-20 px-6 py-4">
+        <p>{description}</p>
+
+        {/* Date, Time, Location */}
         <p className="mt-4">📅 {day}, {month}. {date}</p>
         <p className="">🕑 {_startTime} - {_endTime}</p>
         <p className="">📍 {location}</p>
         {eventLink && <p className="">🔗 <a href={eventLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Sign Up</a></p>}
       </div>
+
+      {/* Bottom shine effect */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
     </div>
   );
 }

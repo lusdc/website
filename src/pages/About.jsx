@@ -10,23 +10,71 @@ import gabe from "/assets/people/gabe.jpeg";
 import veronica from "/assets/people/veronica.jpeg";
 import confusedCrab from "/assets/icons/404Crab.png";
 
+import { useRef, useEffect } from "react";
+
 function TeamMemberCard({ name, title, image, github, linkedin }) {
+  const cardRef = useRef(null);
+  
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const handleMouseMove = (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    };
+
+    card.addEventListener('mousemove', handleMouseMove);
+    return () => card.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+  
   return (
-    <div className="flex flex-col items-center p-4 mt-3 text-center bg-gray-200 shadow-lg max-w-7xl rounded-xl hover:shadow-xl dark:bg-gray-700">
+    <div className="relative flex flex-col items-center p-4 mt-3 text-center bg-gray-200 max-w-7xl dark:bg-gray-700
+                overflow-hidden rounded-2xl 
+              bg-white/10 dark:bg-gray-900/20
+                backdrop-blur-xl backdrop-saturate-120
+                border border-white/20 dark:border-gray-700/30
+                shadow-2xl shadow-black/10 dark:shadow-black/50
+                transition-all duration-500 ease-out
+                hover:scale-[1.02] hover:shadow-3xl
+                hover:border-white/40 dark:hover:border-gray-600/50
+                group"
+      ref={cardRef}
+    >
+        
+      {/* Spotlight effect following mouse */}
+      <div 
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-100 z-0"
+        style={{
+          background: 'radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), var(--ambient-glow-color), transparent 40%)'
+        }}
+      />
+        
+      {/* Inner glow effect */}
+      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+        <div className="absolute inset-[-50%] 
+                        bg-gradient-to-br from-transparent via-white/5 to-transparent
+                        opacity-50" />
+      </div>
+      
       <img
         src={image}
         alt={name + " photo"}
-        className="w-24 h-24 rounded-full"
+        className="w-24 h-24 rounded-full z-10"
       />
-      <h2 className="text-lg font-bold dark:text-gray-100">{name}</h2>
-      <p className="text-gray-700 dark:text-gray-400">{title}</p>
-      <div className="flex justify-center space-x-2">
+      <h2 className="text-lg font-bold dark:text-gray-100 z-10">{name}</h2>
+      <p className="text-gray-700 dark:text-gray-400 z-10">{title}</p>
+      <div className="flex justify-center space-x-2 z-10">
         {linkedin && (
           <a
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 hover:scale-110"
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 hover:scale-110"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,10 +90,10 @@ function TeamMemberCard({ name, title, image, github, linkedin }) {
         )}
         {github && (
           <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 hover:scale-110"
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 hover:scale-110"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,6 +107,7 @@ function TeamMemberCard({ name, title, image, github, linkedin }) {
             </svg>
           </a>
         )}
+
       </div>
     </div>
   );
@@ -171,7 +220,7 @@ function About() {
 
         <TeamMemberCard
           name="Veronica Jonas"
-          title="External Relations Lead"
+          title="Director of External Relations"
           image={veronica}
           linkedin="https://www.linkedin.com/in/veronica-jonas/"
           github="https://github.com/veronicaj2034"

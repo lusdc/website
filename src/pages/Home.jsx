@@ -3,6 +3,7 @@ import redUpArrowIcon from "/assets/icons/redUpArrow.png";
 import rocketIcon from "/assets/icons/rocket.png";
 import communityIcon from "/assets/icons/community.jpg";
 import CardWithGraphic from "../components/CardWithGraphic";
+import MagneticButton from "../components/MagneticButton";
 
 function Home({ setActiveLinkCallback }) {
   return (
@@ -77,7 +78,7 @@ function Home({ setActiveLinkCallback }) {
           </div>
         </div>
         <img
-          className="z-10 hidden w-auto shadow-lg mx-30 h-52 rounded-xl md:inline-flex lg:h-60 2xl:h-80 hover:shadow-xl"
+          className="z-10 hidden w-auto shadow-lg mx-30 h-52 rounded-2xl md:inline-flex lg:h-60 2xl:h-80 hover:shadow-xl"
           src={groupPicture}
           alt="Software Development Club Group Picture"
         />
@@ -88,7 +89,8 @@ function Home({ setActiveLinkCallback }) {
           title="Peer‑Led Workshops"
           description="Weekly sessions dive into languages, frameworks, and best practices—taught by members, for members—so everyone levels up together."
           imgUrl={redUpArrowIcon}
-          glowColor="rgb(255, 92, 27)"
+          glowColor="rgba(255, 92, 27, 0.6)"
+          rotatingBorderAngle="110deg"
           linkTo="/events"
           setActiveLinkCallback={setActiveLinkCallback}
         />
@@ -96,7 +98,7 @@ function Home({ setActiveLinkCallback }) {
           title="Industry-like Projects"
           description="Our project teams tackle real-world problems, following professional workflows so you gain hands‑on experience shipping production‑ready code."
           imgUrl={rocketIcon}
-          glowColor="rgb(254, 193, 27)"
+          glowColor="rgba(254, 193, 27, 0.6)"
           linkTo="/projects"
           setActiveLinkCallback={setActiveLinkCallback}
         />
@@ -104,7 +106,8 @@ function Home({ setActiveLinkCallback }) {
           title="Career-Ready Community"
           description="Hackathons, mentorship, and networking events connect you with alumni and recruiters, turning club experience into standout internships and jobs."
           imgUrl={communityIcon}
-          glowColor="rgb(31, 173, 255)"
+          glowColor="rgba(31, 173, 255, 0.6)"
+          rotatingBorderAngle="280deg"
           linkTo="/"
           setActiveLinkCallback={setActiveLinkCallback}
         />
@@ -115,11 +118,10 @@ function Home({ setActiveLinkCallback }) {
           We meet every Monday at 6 PM in SoBusi 2810. All are welcome!
         </h2>
 
-        <a href="https://discord.gg/YNGmUVba2Q" target="_blank" rel="noopener noreferrer">
-          <button class="mt-6 button w-auto mx-auto">
-            <svg
+        <MagneticButton className="mt-4">
+          <svg
               viewBox="0 0 16 16"
-              class="bi bi-lightning-charge-fill"
+              className="bi bi-lightning-charge-fill"
               fill="currentColor"
               height="16"
               width="16"
@@ -128,9 +130,10 @@ function Home({ setActiveLinkCallback }) {
               <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"></path>
             </svg>
             Join Us!
-          </button>
-        </a>
+          </MagneticButton>
       </div>
+
+      
 
       <div className="sm:text-center">
         <div className="whitespace-nowrap">
