@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { useState } from "react";
-import clubLogo from "/assets/logo.svg";
+import clubLogo from "/assets/icons/crab.gif";
+import luLogo from "/assets/icons/luLogo.png";
+import clubStaticLogo from "/logo.png";
 import confusedCrab from "/assets/icons/404Crab.png";
 import "./App.css";
 
@@ -10,6 +12,8 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import Hackathon from "./pages/Hackathon";
+import Tutorials from "./pages/Tutorials";
+import Tutorial from "./pages/Tutorial";
 
 function App() {
   const [activeLink, setActiveLink] = useState(window.location.pathname);
@@ -17,68 +21,136 @@ function App() {
   return (
     <Router>
       <div className="overflow-x-hidden bg-gray-100 dark:bg-gray-800">
-        <header className="relative z-10 w-full bg-custom-black">
+
+        {/* Navbar */}
+        <header className="w-full glass-nav">
           <div className="flex max-w-[80rem] mx-auto px-4 md:px-6 lg:px-16 justify-between items-center py-3 md:py-4">
-            <Link to="/" onClick={() => setActiveLink("/")}>
+            <Link to="/" onClick={() => {
+              setActiveLink("/")
+              window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              })
+            }}>
+
+              {/* Logo */}
               <div className="flex items-center text-white">
-                <img
-                  className="w-12 sm:w-16 md:w-20"
-                  src={clubLogo}
-                  alt="Software Development Club Logo"
-                />
+
+                <div className="relative w-12 sm:w-16 md:w-20">
+                  {/* LU word on Crab Logo */}
+                  <picture className="absolute z-10 w-[25%] top-[55%] left-[40%]">
+                    {/* Don't animate logo on mobile devices. Load only on viewports 768px wide or larger */}
+                    <source media="(min-width: 768px)" srcSet={luLogo} />
+
+                    {/* For smaller screens, no image is downloaded */}
+                    <img src="" />
+                  </picture>
+
+                  {/* Dancing Crab Logo */}
+                  <picture className="relative">
+                    {/* For smaller screens, use static logo instead */}
+                    <source media="(min-width: 768px)" srcSet={clubLogo} />
+
+                    {/* Don't animate logo on mobile devices. Load only on viewports 768px wide or larger */}
+                    <img src={clubStaticLogo} alt="Software Development Club Logo" />
+                  </picture>
+                </div>
+
+                {/* Page Title */}
                 <h1 className="ml-2 text-lg font-bold sm:ml-3 sm:text-2xl md:text-3xl">
                   SDC
                 </h1>
               </div>
             </Link>
-            <nav className="flex space-x-3 text-white sm:space-x-4 md:space-x-6 lg:space-x-10">
+            <nav className="flex text-white -space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-10">
               <Link
                 to="/"
-                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-colors hover:bg-gray-700 ${
-                  activeLink === "/" ? "font-bold bg-gray-700" : ""
+                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-all hover:scale-110 ${
+                  activeLink === "/" ? "font-bold underline" : ""
                 }`}
-                onClick={() => setActiveLink("/")}
+                onClick={() => {
+                  setActiveLink("/")
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+                }}
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-colors hover:bg-gray-700 ${
-                  activeLink === "/about" ? "font-bold bg-gray-700" : ""
+                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-all hover:scale-110 ${
+                  activeLink === "/about" ? "font-bold underline" : ""
                 }`}
-                onClick={() => setActiveLink("/about")}
+                onClick={() => {
+                  setActiveLink("/about")
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+              }}
               >
                 About
               </Link>
               <Link
                 to="/events"
-                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-colors hover:bg-gray-700 ${
-                  activeLink === "/events" ? "font-bold bg-gray-700" : ""
+                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-all hover:scale-110 ${
+                  activeLink === "/events" ? "font-bold underline" : ""
                 }`}
-                onClick={() => setActiveLink("/events")}
+                onClick={() => {
+                  setActiveLink("/events")
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+              }}
               >
                 Events
               </Link>
               <Link
                 to="/projects"
-                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-colors hover:bg-gray-700 ${
-                  activeLink === "/projects" ? "font-bold bg-gray-700" : ""
+                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-all hover:scale-110 ${
+                  activeLink === "/projects" ? "font-bold underline" : ""
                 }`}
-                onClick={() => setActiveLink("/projects")}
+                onClick={() => {
+                  setActiveLink("/projects")
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+              }}
               >
                 Projects
+              </Link>
+              <Link
+                to="/tutorials"
+                className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-all hover:scale-110 ${
+                  activeLink === "/tutorials" ? "font-bold underline" : ""
+                }`}
+                onClick={() => {
+                  setActiveLink("/tutorials")
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })
+              }}
+              >
+                Tutorials
               </Link>
             </nav>
           </div>
         </header>
 
         {/* Render the page content here */}
-        <div className="flex flex-col min-h-screen max-w-[60rem] lg:max-w-[80rem] mx-auto px-4 md:px-6 lg:px-16 py-8 md:py-16 dark:text-gray-200 overflow-x-hidden">
+        <div className="flex flex-col min-h-screen max-w-[60rem] lg:max-w-[80rem] mx-auto px-4 md:px-6 lg:px-16 py-28 sm:py-36 md:py-40 dark:text-gray-200 overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home setActiveLinkCallback={setActiveLink} />} /> {/* Passing setActiveLink for clickable CardWithGraphics to call */}
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/tutorials/:filename" element={<Tutorial />} /> The :filename parameter creates a dynamic route that captures the requested blog post name.
+            <Route path="/tutorials" element={<Tutorials />} /> {/* The :filename parameter creates a dynamic route that captures the requested blog post name.*/}
             <Route
               path="*"
               element={

@@ -3,5 +3,15 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'markdown-loader',
+      transform(code, id) {
+        if (id.endsWith('.md')) {
+          return `export default ${JSON.stringify(code)};`
+        }
+      },
+    },
+  ],
 })

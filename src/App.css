@@ -5,6 +5,7 @@ body {
 :root {
   --background-color: #1f2937;
   --ambient-glow-color: rgba(254, 192, 163, 0.8);
+  --glowing-blob-color: var(--ambient-glow-color);
   --text-shadow-color: #DFE3E9;
 }
 
@@ -12,6 +13,7 @@ body {
   :root {
     --background-color: #1f2937;
     --ambient-glow-color: rgba(59, 130, 246, 0.8);
+    --glowing-blob-color: var(--ambient-glow-color);
     --text-shadow-color: #374151;
   }
 }
@@ -63,13 +65,34 @@ body {
   color: #888;
 } */
 
+/* Glass Navigation Bar */
+
+.glass-nav {
+  position: fixed;
+  min-height: 80px;
+  background: linear-gradient(to bottom, var(--background-color) 0%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Cards with Rotating Borders on Hero */
+
 @property --rotating-border-color {
   syntax: "<color>";
   initial-value: 0;
   inherits: true;
 }
 
-@property --rotating-border-angle {
+@property --rotating-glow-curr-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --rotating-glow-start-angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
@@ -80,17 +103,38 @@ body {
   border-radius: 0.75rem;
   
   background-image: conic-gradient(
-    from var(--rotating-border-angle, 0deg),
+    from var(--rotating-glow-curr-angle, 0deg),
     transparent 25%,
     var(--rotating-border-color) 90%,
     transparent 95%
   );
     
-  animation: spin 2s linear infinite;
-  transition: padding 0.1s linear;
+  animation: spin 20s linear infinite;
+  transition: transform 0.1s linear;
   
   /* Start hidden until hover */
   padding: 0px; /* thickness of the border */
+}
+
+/* Styles for screens 768px and wider (tablets and desktops) */
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .rotating-border-wrapper {
+    position: relative;
+    border-radius: 0.75rem;
+    
+    background-image: conic-gradient(
+      from var(--rotating-glow-curr-angle, 0deg),
+      transparent 25%,
+      var(--rotating-border-color) 90%,
+      transparent 95%
+    );
+      
+    animation: none;
+    transition: none;
+    
+    /* Start hidden until hover */
+    padding: 0px; /* thickness of the border */
+  }
 }
 
 .rotating-border-wrapper::after {
@@ -117,7 +161,6 @@ body {
 
 .rotating-border-wrapper:hover {
   transform: scale(1.01);
-  padding: 1.5px;
   z-index: 10;
 }
 
@@ -127,8 +170,11 @@ body {
 }
 
 @keyframes spin {
+  from {
+    --rotating-glow-curr-angle: var(--rotating-glow-start-angle);
+  }
   to {
-    --rotating-border-angle: 360deg;
+    --rotating-glow-curr-angle: calc(var(--rotating-glow-start-angle) + 360deg);
   }
 }
 
@@ -151,6 +197,70 @@ body {
   opacity: 1;
   animation: bounce-out 0.6s ease;
 }
+
+/* Magnetic "Join Us" Button */
+
+.magnetic-wrapper {
+  /* optional: larger hit area around the button */
+  padding: 6px;
+  display: inline-block;
+  line-height: 0; /* avoid extra gap */
+}
+
+.magnetic-button {
+  --edge-light: hsla(0, 0%, 50%, 0.8);
+  --text-light: rgba(255, 255, 255, 0.4);
+  --back-color: 14, 80%;
+
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  background: linear-gradient(
+    140deg,
+    hsla(var(--back-color), 50%, 1) min(2em, 20%),
+    hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+  );
+  border: 0;
+  box-shadow: inset 0.4px 1px 4px var(--edge-light);
+
+  /* performance hint */
+  will-change: transform text-shadow;
+  transform-origin: center center;
+
+  /* smooth fallback while JS kicks in */
+  transition: box-shadow 220ms ease, text-shadow 220ms ease, transform 180ms cubic-bezier(.2,.9,.3,1);
+}
+
+.magnetic-button:hover {
+  --text-light: rgba(255, 255, 255, 1);
+  --back-color: 14, 80%;
+
+  box-shadow: inset 0.4px 1px 8px var(--edge-light),
+    0px 0px 8px hsla(var(--back-color), 50%, 0.6);
+  text-shadow: 0px 0px 20px var(--text-light);
+  color: hsla(0, 0%, 100%, 1);
+}
+
+/* small rotation on hover for embedded icons (optional) */
+.magnetic-button svg {
+  transition: transform 220ms ease;
+}
+
+.magnetic-button:hover svg {
+  transform: rotate(18deg);
+}
+
+/* focus styles for accessibility */
+.magnetic-button:focus {
+  outline: 3px solid rgba(255, 92, 27, 0.18);
+  outline-offset: 3px;
+}
+
+/* Misc. */
 
 @keyframes fade-in {
   to {
@@ -307,23 +417,59 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Glowing Blob in the Background */
+@property --glowing-blob-color {
+  syntax: "<color>";
+  initial-value: ffffff;
+  inherits: true;
+}
+
 .glow {
   position: absolute;
   z-index: 0;
-  background: radial-gradient(ellipse, var(--ambient-glow-color), transparent 70%);
+  background: radial-gradient(ellipse, var(--glowing-blob-color), transparent 70%);
   filter: blur(100px);
 }
 
 .glow-from-left {
   position: absolute;
   z-index: 0;
-  background: radial-gradient(ellipse at 0 0, var(--ambient-glow-color), transparent 70%);
+  background: radial-gradient(ellipse at 0 0, var(--glowing-blob-color), transparent 70%);
   filter: blur(100px);
 }
 
 .glow-from-right {
   position: absolute;
   z-index: 0;
-  background: radial-gradient(ellipse at 100% 100%, var(--ambient-glow-color), transparent 70%);
+  background: radial-gradient(ellipse at 100% 100%, var(--glowing-blob-color), transparent 70%);
   filter: blur(100px);
 }
+
+/* Tutorial Card */
+
+@property --tutorial-backlit-color {
+  syntax: "<color>";
+  initial-value: 0;
+  inherits: true;
+}
+
+.tutorial-card-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, var(--tutorial-backlit-color), transparent, transparent);
+  opacity: 1;
+  transition: opacity 700ms;
+}
+
+.tutorial-card-gradient:hover::before,
+.group:hover .tutorial-card-gradient::before {
+  opacity: 0;
+}
+
+/* Dark mode variant */
+/* @media (prefers-color-scheme: dark) {
+  .tutorial-card-gradient::before {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), transparent, transparent);
+  }
+} */
