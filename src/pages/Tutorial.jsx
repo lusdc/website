@@ -68,7 +68,7 @@ function Tutorial() {
       <div className="glow w-10/12 h-80 -top-20 left-1/2 -translate-x-1/2" style={{ ["--glowing-blob-color"]: glowColor }}></div>
 
       {/* Page icon */}
-      <div className="relative h-24 overflow-hidden">
+      <div className="relative h-24">
           
           <div className="absolute inset-0 flex items-center justify-center p-8">
             <div className="relative w-48 h-48 rounded-2xl
@@ -93,29 +93,31 @@ function Tutorial() {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          // Custom code block styling with syntax highlighting
+          // Code blocks with syntax highlighting
           code({ node, inline, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || '');
+            const match = /language-(\w+)/.exec(className || "");
             return !inline && match ? (
               <SyntaxHighlighter
-                style={{ ...gruvboxDark, "margin-left": "1rem" }}
+                style={{ ...gruvboxDark, marginLeft: "1rem" }}
                 language={match[1]}
                 PreTag="div"
                 className="rounded-lg"
                 {...props}
               >
-                {String(children).replace(/\n$/, '')}
+                {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
             ) : (
-              <code 
-                className="bg-gray-50 text-red-600 px-1 py-0.5 rounded text-sm font-mono" 
+              <code
+                className="text-white px-1 py-0.5 rounded text-sm font-mono"
+                style={{ "background-color": glowColor }}
                 {...props}
               >
                 {children}
               </code>
             );
           },
-          // Style headings
+
+          // Headings
           h1: ({ node, ...props }) => (
             <h1 className="text-4xl font-bold mt-8 mb-6" {...props} />
           ),
@@ -125,32 +127,73 @@ function Tutorial() {
           h3: ({ node, ...props }) => (
             <h3 className="text-xl font-semibold mt-6 mb-4" {...props} />
           ),
-          // Style paragraphs
+
+          // Paragraphs
           p: ({ node, ...props }) => (
-            <p className="mb-4 pl-4 opacity-50 leading-relaxed" {...props} />
+            <p className="mb-4 pl-4 opacity-80 leading-relaxed" {...props} />
           ),
-          // Style lists
+
+          // Unordered and ordered lists (use padding for indentation; markers outside)
           ul: ({ node, ...props }) => (
-            <ul className="list-disc list-inside mb-4 space-y-2" {...props} />
+            <ul
+              className="list-disc list-outside mb-4 pl-10 space-y-2 opacity-80"
+              {...props}
+            />
           ),
           ol: ({ node, ...props }) => (
-            <ol className="list-decimal list-inside mb-4 space-y-2" {...props} />
+            <ol
+              className="list-decimal list-outside mb-4 pl-10 space-y-2 opacity-80"
+              {...props}
+            />
           ),
-          // Style links
+
+          // Optional: style list items (helps vertical rhythm)
+          li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
+
+          // Optional: style GFM task-list checkboxes
+          input: ({ node, ...props }) => (
+            <input className="mr-2 accent-blue-600" {...props} />
+          ),
+
+          // Links
           a: ({ node, ...props }) => (
-            <a 
-              className="text-blue-600 hover:text-blue-800 underline" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              {...props} 
+            <a
+              className="text-blue-600 hover:text-blue-800 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              {...props}
             />
           ),
-          // Style blockquotes
+
+          // Blockquotes
           blockquote: ({ node, ...props }) => (
-            <blockquote 
-              className="border-l-4 border-gray-300 pl-4 italic my-4 text-gray-600" 
-              {...props} 
+            <blockquote
+              className="border-l-4 border-gray-300 pl-4 italic my-4 text-gray-600"
+              {...props}
             />
+          ),
+
+          // Tables (from GFM) with rounded corners
+          table: ({ node, ...props }) => (
+            <div className="my-6 overflow-x-auto">
+              <div className="rounded-lg overflow-hidden border border-gray-200">
+                <table className="w-full text-sm" {...props} />
+              </div>
+            </div>
+          ),
+          thead: ({ node, ...props }) => <thead style={{ "background-color": glowColor }} {...props} />,
+          tbody: ({ node, ...props }) => <tbody {...props} />,
+          tr: ({ node, ...props }) => (
+            <tr className="border-b last:border-0" {...props} />
+          ),
+          th: ({ node, ...props }) => (
+            <th
+              className="text-left font-semibold px-3 py-2 border border-gray-200"
+              {...props}
+            />
+          ),
+          td: ({ node, ...props }) => (
+            <td className="px-3 py-2 align-top border border-gray-200" {...props} />
           ),
         }}
       >
