@@ -117,13 +117,13 @@ body {
 }
 
 /* Styles for screens 768px and wider (tablets and desktops) */
-@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+@media (max-width: 767px) {
   .rotating-border-wrapper {
     position: relative;
     border-radius: 0.75rem;
     
     background-image: conic-gradient(
-      from var(--rotating-glow-curr-angle, 0deg),
+      from var(--rotating-glow-start-angle, 0deg),
       transparent 25%,
       var(--rotating-border-color) 90%,
       transparent 95%

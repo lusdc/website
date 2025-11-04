@@ -90,7 +90,7 @@ function Home({ setActiveLinkCallback }) {
           description="Weekly sessions dive into languages, frameworks, and best practices—taught by members, for members—so everyone levels up together."
           imgUrl={redUpArrowIcon}
           glowColor="rgba(255, 92, 27, 0.6)"
-          rotatingBorderAngle="110deg"
+          rotatingBorderAngle="120deg"
           linkTo="/events"
           setActiveLinkCallback={setActiveLinkCallback}
         />
@@ -99,6 +99,7 @@ function Home({ setActiveLinkCallback }) {
           description="Our project teams tackle real-world problems, following professional workflows so you gain hands‑on experience shipping production‑ready code."
           imgUrl={rocketIcon}
           glowColor="rgba(254, 193, 27, 0.6)"
+          rotatingBorderAngle="310deg"
           linkTo="/projects"
           setActiveLinkCallback={setActiveLinkCallback}
         />
@@ -116,7 +117,7 @@ function Home({ setActiveLinkCallback }) {
 
       <div className="flex flex-col items-center my-48 text-center">
         <h2 className="text-2xl">
-          We meet every Monday at 6 PM in SoBusi 2810. All are welcome!
+          We meet every Tuesday at 5:30 PM in SoBusi 2810. All are welcome!
         </h2>
 
         <a
