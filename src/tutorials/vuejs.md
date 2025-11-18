@@ -1,7 +1,5 @@
 ## A Hands-On Introduction to Vue.js
 
-Hi, I’m **Loc Nguyen**! I'm writing this Introduction to Vue.js post for **CSCN 315**!
-
 If you’re reading this, you’ve probably spent some time building websites with the trusty trio: HTML for structure, CSS for style, and JavaScript for behavior. You know how to create a button, and you know how to use `document.getElementById` to make it do something when clicked.
 
 But maybe you've noticed that as your projects get bigger, your JavaScript starts to feel… messy. You have variables all over the place, and you spend a lot of time writing code just to keep your HTML updated when your data changes. It works, but it feels complicated. That’s where a framework like Vue.js comes in.

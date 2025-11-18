@@ -1,7 +1,5 @@
 ## A Hands-On Introduction to Laravel (PHP Framework)
 
-Hi, I’m **Loc Nguyen**! I'm writing this Introduction to Laravel post for **CSCN 316**!
-
 This is a concise Laravel quick-start and to‑do flow guide, covering routing, controllers, views/Blade, validation, and daily essentials like Artisan, route model binding, and Blade directives for productivity from day one. 
 
 ### Why not plain PHP? Why a framework?
