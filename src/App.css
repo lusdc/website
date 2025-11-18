@@ -70,7 +70,7 @@ body {
 .glass-nav {
   position: fixed;
   min-height: 80px;
-  background: linear-gradient(to bottom, var(--background-color) 0%, transparent);
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--background-color) 25%, transparent 25%) 0%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   top: 0;

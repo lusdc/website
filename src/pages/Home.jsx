@@ -16,7 +16,7 @@ function Home({ setActiveLinkCallback }) {
       {/* Page content */}
       <div className="z-10 flex items-center justify-between w-full mb-16 space-x-4">
         <div className="">
-          <h2 className="text-3xl font-bold text-custom-light-orange xl:text-4xl dark:text-custom-light-orange">
+          <h2 className="text-3xl font-bold text-custom-dark-orange xl:text-4xl dark:text-custom-light-orange">
             Software Development Club
           </h2>
           <h3 className="text-2xl font-thin text-gray-700 dark:text-gray-400 xl:text-3xl">
