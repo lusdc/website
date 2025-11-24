@@ -21,7 +21,7 @@ function ProjectCard({ imageUrl, title, description, hashtags, projectLeaders, p
                 hover:border-white/40 dark:hover:border-gray-600/50">
 
       {/* Inner glow effect */}
-      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden rounded-2xl">
         <div className="absolute inset-[-50%] 
                         bg-gradient-to-br from-transparent via-white/5 to-transparent
                         opacity-50" />
@@ -36,7 +36,7 @@ function ProjectCard({ imageUrl, title, description, hashtags, projectLeaders, p
         ></img>
 
         {/* Title */}
-        <h2 className="absolute bottom-3 px-6 z-10 text-2xl font-bold dark:text-gray-200">{title}</h2>
+        <h2 className="absolute z-10 px-6 text-2xl font-bold text-white bottom-3 dark:text-gray-200">{title}</h2>
 
         {/* Fade to clarify Title */}
         <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-white/10 dark:from-gray-900/80 to-transparent"></div>
@@ -47,7 +47,7 @@ function ProjectCard({ imageUrl, title, description, hashtags, projectLeaders, p
         <p>{description}</p>
 
         {/* Hashtags */}            
-        <div className="flex flex-wrap mt-4 gap-1">
+        <div className="flex flex-wrap gap-1 mt-4">
             {hashtags.map((hashtag) => 
               <div key={hashtag}
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full
@@ -57,7 +57,7 @@ function ProjectCard({ imageUrl, title, description, hashtags, projectLeaders, p
                               shadow-lg">
                 <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${getHastagColor(hashtag)} 
                                 shadow-lg shadow-current animate-pulse`} />
-                <span className="text-sm font-semibold text-gray-800 dark:text-gray-200 tracking-wider">
+                <span className="text-sm font-semibold tracking-wider text-gray-800 dark:text-gray-200">
                   {hashtag}
                 </span>
               </div>
@@ -80,7 +80,7 @@ function Projects() {
   return (
     <>
       {/* Glowing blobs */}
-      <div className="glow w-10/12 h-80 -top-20 left-1/2 -translate-x-1/2"></div>
+      <div className="w-10/12 -translate-x-1/2 glow h-80 -top-20 left-1/2"></div>
 
       {/* Page content */}
       <div className="w-full">
