@@ -1,12 +1,12 @@
-body {
+bbody {
   background-color: rgb(23,23,23);
 }
 
 :root {
-  --background-color: #1f2937;
-  --ambient-glow-color: rgba(254, 192, 163, 0.8);
+  --background-color: #f3f4f6;
+  --ambient-glow-color: rgba(59, 130, 246, 0.6);
   --glowing-blob-color: var(--ambient-glow-color);
-  --text-shadow-color: #DFE3E9;
+  --text-shadow-color: #9CA3AF;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,60 +22,24 @@ body {
   color: var(--text-shadow-color);
 }
 
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-
 /* Glass Navigation Bar */
 
 .glass-nav {
   position: fixed;
   min-height: 80px;
-  background: linear-gradient(to bottom, var(--background-color) 0%, transparent);
+  background: linear-gradient(to bottom, var(--background-color) 0%, rgba(255, 255, 255, 0.8));
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass-nav {
+    background: linear-gradient(to bottom, var(--background-color) 0%, transparent);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+  }
 }
 
 /* Cards with Rotating Borders on Hero */

@@ -34,7 +34,7 @@ function App() {
             }}>
 
               {/* Logo */}
-              <div className="flex items-center text-white">
+              <div className="flex items-center dark:text-white">
 
                 <div className="relative w-12 sm:w-16 md:w-20">
                   {/* LU word on Crab Logo */}
@@ -62,7 +62,7 @@ function App() {
                 </h1>
               </div>
             </Link>
-            <nav className="flex text-white -space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-10">
+            <nav className="flex -space-x-2 dark:text-white sm:space-x-4 md:space-x-6 lg:space-x-10">
               <Link
                 to="/"
                 className={`text-xs sm:text-sm md:text-base px-2 py-1 rounded transition-all hover:scale-110 ${
