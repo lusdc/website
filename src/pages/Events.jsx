@@ -31,7 +31,7 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location,
                 hover:border-white/40 dark:hover:border-gray-600/50">
 
       {/* Inner glow effect */}
-      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden rounded-2xl">
         <div className="absolute inset-[-50%] 
                         bg-gradient-to-br from-transparent via-white/5 to-transparent
                         opacity-50" />
@@ -46,7 +46,7 @@ function EventCard({ imageUrl, title, description, startTime, endTime, location,
         ></img>
 
         {/* Title */}
-        <h2 className="absolute bottom-3 px-6 z-10 text-2xl font-bold dark:text-gray-200">{title}</h2>
+        <h2 className="absolute z-10 px-6 text-2xl font-bold text-white bottom-3 dark:text-gray-200">{title}</h2>
 
         {/* Fade to clarify Title */}
         <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-white/10 dark:from-gray-900/80 to-transparent"></div>
