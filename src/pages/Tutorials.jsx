@@ -154,7 +154,7 @@ function Tutorials() {
           <h1 className="relative -mt-6 text-3xl font-bold">Tutorials</h1>
         </div>
 
-        <div className="flex space-y-4 mt-16 justify-center">
+        <div className="flex flex-wrap gap-4 md:gap-6 mt-16 justify-center">
           {tutorials.map(tutorial => (
             <TutorialCard
               key={tutorial.filename}
