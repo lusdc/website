@@ -1,18 +1,10 @@
 export const events = [
     {
         'imageUrl': '/assets/events/rocketLaunch.png',
-        'title': 'Kick-off',
-        'description': 'Come with us to find out the extremely fun line-up of club activities, projects, and more! Learn how SDC can be a springboard for your career!',
-        'startTime': '2025-08-25T18:00:00-04:00',
-        'endTime': '2025-08-25T19:30:00-04:00',
+        'title': "O'Malley After Dark ",
+        'description': 'Continue to build your low level competency with your favorite Computer Science Professor, Dr. O\'Malley! Join us for an evening of coding and fun as we work through niche coding problems together!',
+        'startTime': '2026-02-02T18:00:00-04:00',
+        'endTime': '2026-08-25T19:30:00-04:00',
         'location': 'SoBusi 2810'
-    },
-    {
-        'imageUrl': '/assets/events/hackthon.png',
-        'title': '12 Hour Hackathon',
-        'description': 'Join us for our first 12-hour hackathon ever judged by industry professionals! This is a great opportunity to work on a team to build a project, learn new skills, and network with others.',
-        'startTime': '2025-09-13T09:00:00-04:00',
-        'endTime': '2025-09-13T21:00:00-04:00',
-        'location': 'School of Business',
     }
 ];

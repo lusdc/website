@@ -5,7 +5,7 @@ export const projects = [
         'title': 'Rot Menu Alert',
         'description': 'Building an application that scrapes the dining hall menus and sends alerts when favorite foods appear.',
         'hashtags': ["WebDev", "FullStack", "Food"],
-        'projectLeaders': ["Ron Popov"],
+        'projectLeaders': [],
         'projectMembers': []
     },
     // {
@@ -32,7 +32,7 @@ export const projects = [
         'title': 'AI Resume Analyzer',
         'description': 'An AI-powered tool that analyzes resumes and provides feedback to improve job applications.',
         'hashtags': ["GenerativeAI", "Job Search"],
-        'projectLeaders': ["Veronica Jonas"],
+        'projectLeaders': [],
         'projectMembers': []
     },
     {
@@ -41,7 +41,7 @@ export const projects = [
         'title': 'Generative AI Assistant',
         'description': 'An collaborative project to build and extend AI chatbots for various use cases.',
         'hashtags': ["GenerativeAI", "Job Search"],
-        'projectLeaders': ["Graham Thomasson"],
+        'projectLeaders': [],
         'projectMembers': []
     }
     // {

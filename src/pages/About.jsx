@@ -3,13 +3,6 @@ import phoneIcon from "/assets/icons/phone.png";
 import redRocketIcon from "/assets/icons/redRocket.png";
 import lightbulbIcon from "/assets/icons/lightbulb.png";
 
-import jeffrey from "/assets/people/jeffrey.jpeg";
-import ron from "/assets/people/ron.jpeg";
-import loc from "/assets/people/loc.jpeg";
-import gabe from "/assets/people/gabe.jpeg";
-import veronica from "/assets/people/veronica.jpeg";
-import confusedCrab from "/assets/icons/404Crab.png";
-
 import { useRef, useEffect } from "react";
 
 function TeamMemberCard({ name, title, image, github, linkedin }) {
@@ -48,14 +41,14 @@ function TeamMemberCard({ name, title, image, github, linkedin }) {
         
       {/* Spotlight effect following mouse */}
       <div 
-        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-100 z-0"
+        className="absolute inset-0 z-0 transition-opacity duration-100 opacity-0 pointer-events-none group-hover:opacity-30"
         style={{
           background: 'radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), var(--ambient-glow-color), transparent 40%)'
         }}
       />
         
       {/* Inner glow effect */}
-      <div className="absolute inset-0 rounded-2xl overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden rounded-2xl">
         <div className="absolute inset-[-50%] 
                         bg-gradient-to-br from-transparent via-white/5 to-transparent
                         opacity-50" />
@@ -64,11 +57,11 @@ function TeamMemberCard({ name, title, image, github, linkedin }) {
       <img
         src={image}
         alt={name + " photo"}
-        className="w-24 h-24 rounded-full z-10"
+        className="z-10 w-24 h-24 rounded-full"
       />
-      <h2 className="text-lg font-bold dark:text-gray-100 z-10">{name}</h2>
-      <p className="text-gray-700 dark:text-gray-400 z-10">{title}</p>
-      <div className="flex justify-center space-x-2 z-10">
+      <h2 className="z-10 text-lg font-bold dark:text-gray-100">{name}</h2>
+      <p className="z-10 text-gray-700 dark:text-gray-400">{title}</p>
+      <div className="z-10 flex justify-center space-x-2">
         {linkedin && (
           <a
           href={linkedin}
@@ -170,61 +163,7 @@ function About() {
               </div>
             </div>
           </div>
-
         </div>
-      </div>
-
-      <div className="mt-20 sm:text-center sm:mt-36">
-        <div className="whitespace-nowrap">
-          <h3 className="-ml-4 text-5xl font-bold sm:text-6xl text-shadow sm:ml-0">Our Leadership</h3>
-        </div>
-        <h3 className="-mt-6 text-3xl font-bold">Our Leadership</h3>
-      </div>
-
-      <div className="relative grid grid-cols-1 mt-8 gap-x-4 sm:grid-cols-2">
-        <TeamMemberCard
-          name="Jeffrey Vandever"
-          title="President"
-          image={jeffrey}
-          linkedin="https://www.linkedin.com/in/jeffrey-vandever/"
-          github="https://github.com/jeffreyv101"
-        />
-
-        <TeamMemberCard name="TBD" title="Vice President" image={confusedCrab} />
-      </div>
-
-      <div className="relative grid grid-cols-1 gap-x-4 sm:grid-cols-4">
-        <TeamMemberCard
-          name="Ron Popov"
-          title="Treasurer"
-          image={ron}
-          linkedin="https://www.linkedin.com/in/ron-popov-59ba47201/"
-          github="https://github.com/RuskiCamandir05"
-        />
-
-        <TeamMemberCard
-          name="Loc Nguyen"
-          title="Director of Marketing"
-          image={loc}
-          linkedin="https://www.linkedin.com/in/lock-nguyen/"
-          github="https://github.com/LockNguyen"
-        />
-
-        <TeamMemberCard
-          name="Gabe Eaton"
-          title="Director of Club Projects"
-          image={gabe}
-          linkedin="https://www.linkedin.com/in/gabeeaton/"
-          github="https://github.com/gabeeaton"
-        />
-
-        <TeamMemberCard
-          name="Veronica Jonas"
-          title="Director of External Relations"
-          image={veronica}
-          linkedin="https://www.linkedin.com/in/veronica-jonas/"
-          github="https://github.com/veronicaj2034"
-        />
       </div>
     </>
   );

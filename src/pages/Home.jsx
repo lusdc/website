@@ -86,8 +86,8 @@ function Home({ setActiveLinkCallback }) {
 
       <div className="items-stretch mt-16 space-y-3 md:justify-between md:flex md:space-x-3 md:space-y-0">
         <CardWithGraphic
-          title="Peer‑Led Workshops"
-          description="Weekly sessions dive into languages, frameworks, and best practices—taught by members, for members—so everyone levels up together."
+          title="Deep-dive Workshops"
+          description="Weekly sessions dive into languages, frameworks, and best practices—taught by professors, you've got a front-row seat to expert knowledge."
           imgUrl={redUpArrowIcon}
           glowColor="rgba(255, 92, 27, 0.6)"
           rotatingBorderAngle="120deg"
@@ -117,7 +117,7 @@ function Home({ setActiveLinkCallback }) {
 
       <div className="flex flex-col items-center my-48 text-center">
         <h2 className="text-2xl">
-          We meet every Tuesday at 5:30 PM in SoBusi 2810. All are welcome!
+          Our project teams are always looking for new members to help build exciting applications!
         </h2>
 
         <a
